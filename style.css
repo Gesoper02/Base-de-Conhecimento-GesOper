@@ -40,6 +40,11 @@ body {
     margin: 5px;
     border-radius: 5px;
 }
+.sidebar a.active {
+  background: #ffc107;
+  color: black;
+  font-weight: bold;
+}
 
 .sidebar a:hover {
     background: #155a96;
