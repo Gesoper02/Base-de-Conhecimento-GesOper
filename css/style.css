@@ -46,9 +46,32 @@ body {
 .sidebar a:hover {
     background: #155a96;
 }
+.content h1 {
+  font-size: 28px;
+  margin-top: 0;
+  color: #333;
+}
+
 .content {
-    padding: 20px;
-    flex-grow: 1;
+  padding: 30px;
+  flex-grow: 1;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+.content input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+    .content a {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #0B5091;
+  font-weight: bold;
 }
 body.dark {
   background-color: #121212;
