@@ -42,7 +42,6 @@ body {
     padding: 20px;
     flex-grow: 1;
 }
-
 body.dark {
     background-color: #121212;
     color: #ffffff;
