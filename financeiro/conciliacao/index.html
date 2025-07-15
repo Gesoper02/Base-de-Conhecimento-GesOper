@@ -4,43 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Conciliação Bancária</title>
-    <link rel="stylesheet" href="../../img/../css/style.css">
-    
-<script>
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-}
-function searchContent() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const content = document.querySelector(".content p");
-    if (content) {
-        content.innerHTML = content.textContent.toLowerCase().includes(input)
-            ? content.textContent
-            : "Nenhum resultado encontrado.";
-    }
-}
-</script>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <img src="../../img/GesoperCorporate.png" alt="Logo Esquerda">
-        <button onclick="toggleTheme()">🌓 Tema</button>
-        <img src="../../img/LogoSolucao.png" alt="Logo Direita">
-    </div>
-    <div class="container">
-        <div class="sidebar">
-            <a href="../../img/../operacional/index.html">Operacional</a>
-            <a href="../../img/../financeiro/index.html">Financeiro</a>
-            <a href="../../img/../beneficios/index.html">Benefícios</a>
-        </div>
-        <div class="content">
-            <a href="../../index.html">⬅ Voltar para Início</a>
-            <h1>Conciliação Bancária</h1>
-            <input type="text" id="searchInput" oninput="searchContent()" placeholder="Buscar...">
-            <p>Processo de conciliação bancária</p>
-        </div>
-    </div>
+    <header>
+        <h1>Conciliação Bancária</h1>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>O que é a Conciliação Bancária?</h2>
+            <p>
+                Toda vez que uma conta banco é movimentada através do fluxo de caixa, ela mantém um registro dentro do módulo administrativo para posterior validação junto ao arquivo de extrato (OFX) gerado a partir do banco. Esse processo de validação de lançamentos chamamos de conciliação bancária.
+            </p>
+            <p>
+                Para acessar o programa de conciliação bancária, abra o menu <strong>“Tesouraria”</strong> e em seguida <strong>“Conciliação bancária”</strong>. Inicialmente, dependemos de um arquivo de conciliação bancária que deve ser obtido através do site do banco. Normalmente, o processo é feito sob o dia anterior ou semana anterior.
+            </p>
+            <p>
+                O primeiro passo é definir a data nos campos <strong>Data inicial</strong> e <strong>Data final</strong>, obter o arquivo OFX do banco, clicar em <strong>“Importar OFX”</strong> e depois em <strong>“Pesquisar”</strong>.
+            </p>
+            <p>
+                No lado esquerdo, <strong>Extrato Bancário</strong> exibe os dados do OFX. No lado direito, <strong>Gesoper ADM</strong> mostra os lançamentos do fluxo de caixa da conta selecionada.
+            </p>
+            <p>
+                É possível excluir registros do lado esquerdo com o botão <strong>“Excluir Lançamento”</strong>, por exemplo, para importar novamente. Também é possível lançar um estorno com o botão <strong>“Estornar Selecionados”</strong> e desfazer com o botão <strong>“Desfazer Estorno”</strong>.
+            </p>
+            <p>
+                Existem filtros úteis como <strong>“Ocultar Conciliados”</strong>, <strong>“Tipo”</strong> (Débito, Crédito ou Todos) e <strong>Valor</strong>, permitindo localizar lançamentos específicos.
+            </p>
+            <p>
+                No lado direito, <strong>Gesoper ADM</strong>, temos ações como:
+                <ul>
+                    <li><strong>“Marcar Iguais”</strong>: marca lançamentos com data e valor idênticos em ambos os lados.</li>
+                    <li><strong>“Conciliar Selecionados”</strong>: efetiva a conciliação dos registros marcados.</li>
+                    <li><strong>“Ajustar Conciliação”</strong>: corrige diferenças de centavos entre valores.</li>
+                    <li><strong>“Marcar Conciliados”</strong> e <strong>“Desmarcar Conciliados”</strong>: gerenciam o que é exibido na tela.</li>
+                    <li><strong>“Detalhar”</strong>: mostra os detalhes do lançamento selecionado.</li>
+                    <li><strong>“Gerar Lançamento”</strong>: cria lançamentos não existentes no sistema como tarifas, juros etc.</li>
+                    <li><strong>“Listar”</strong>: gera relatório conforme o filtro usado – Tudo, Não Conciliados ou Conciliados.</li>
+                </ul>
+            </p>
+        </section>
+        <section id="procedimentos">
+            <h2>Procedimentos</h2>
+            <ol>
+                <li>Acesse o menu Financeiro &gt;Tesouraria&gt; Conciliação.</li>
+                <li>Escolha o período desejado.</li>
+                <li>Importe o extrato bancário em formato compatível.</li>
+                <li>Compare os lançamentos e identifique divergências.</li>
+                <li>Ajuste ou registre lançamentos conforme necessário.</li>
+            </ol>
+        </section>
+        <section id="prints">
+            <h2>Tela da Conciliação Bancária</h2>
+            <img src="conciliacao_tela2.png" alt="Tela de Conciliação 2" width="900">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Gesoper Conciliação Bancária</p>
+    </footer>
 </body>
 </html>
-    
