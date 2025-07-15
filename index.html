@@ -7,45 +7,44 @@
     <title>Base de Conhecimento GesOper</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body { display: flex; margin: 0; font-family: sans-serif; }
-        .sidebar { width: 250px; background-color: #0d6efd; color: white; padding: 10px; height: 100vh; }
+        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
+        .main-wrapper { flex: 1; display: flex; }
+        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
         .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
         .submenu { display: none; margin-left: 10px; }
         .content { flex: 1; padding: 20px; }
         .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .btn-theme, .btn-busca { padding: 6px 12px; cursor: pointer; border-radius: 5px; border: 1px solid #ccc; }
+        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
+        a { text-decoration: none; }
     </style>
     <script>
         function toggleSubmenu(id) {
             const menu = document.getElementById(id);
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-
-        function toggleTheme() {
-            document.body.classList.toggle('dark');
-        }
     </script>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>GesOper</h2>
-        <button onclick="toggleSubmenu('opSub')">Operacional</button>
-        <div class="submenu" id="opSub">
-            <a href="operacional/escala/index.html" style="color:white;">↪ Escala</a><br>
-            <a href="operacional/cadastro-jornada/index.html" style="color:white;">↪ Cadastro de Jornada</a>
-        </div>
-        <button><a href="financeiro/index.html" style="color:white;">Financeiro</a></button>
-        <button><a href="beneficios/index.html" style="color:white;">Benefícios</a></button>
-    </div>
-    <div class="content">
-        <div class="topbar">
-            <h1>Base de Conhecimento GesOper</h1>
-            <div>
-                <input type="text" placeholder="Buscar..." class="btn-busca" />
-                <button class="btn-theme" onclick="toggleTheme()">🌗 Tema</button>
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <h2>GesOper</h2>
+            <button onclick="toggleSubmenu('opSub')">Operacional</button>
+            <div class="submenu" id="opSub">
+                <a href="operacional/escala/index.html" style="color:white;">↪ Escala</a><br>
+                <a href="operacional/cadastro-jornada/index.html" style="color:white;">↪ Cadastro de Jornada</a>
             </div>
+            <button><a href="financeiro/index.html" style="color:white;">Financeiro</a></button>
+            <button><a href="beneficios/index.html" style="color:white;">Benefícios</a></button>
         </div>
-        <p>Bem-vindo à base de conhecimento do sistema GesOper. Use o menu lateral para navegar pelos módulos.</p>
+        <div class="content">
+            <div class="topbar">
+                <h1>Base de Conhecimento GesOper</h1>
+            </div>
+            <p>Bem-vindo à base de conhecimento do sistema GesOper. Use o menu lateral para navegar pelos módulos.</p>
+        </div>
     </div>
+    <footer>
+        @ 2025 - Gesoper
+    </footer>
 </body>
 </html>
