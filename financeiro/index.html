@@ -1,1 +1,45 @@
-<!-- Módulo Financeiro -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Conciliação Bancária</title>
+    <link rel="stylesheet" href="../../img/../css/style.css">
+    
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+function searchContent() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const content = document.querySelector(".content p");
+    if (content) {
+        content.innerHTML = content.textContent.toLowerCase().includes(input)
+            ? content.textContent
+            : "Nenhum resultado encontrado.";
+    }
+}
+</script>
+
+</head>
+<body>
+    <div class="header">
+        <img src="../../img/GesoperCorporate.png" alt="Logo Esquerda">
+        <button onclick="toggleTheme()">🌓 Tema</button>
+        <img src="../../img/LogoSolucao.png" alt="Logo Direita">
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <a href="../../img/../operacional/index.html">Operacional</a>
+            <a href="../../img/../financeiro/index.html">Financeiro</a>
+            <a href="../../img/../beneficios/index.html">Benefícios</a>
+        </div>
+        <div class="content">
+            <a href="../../index.html">⬅ Voltar para Início</a>
+            <h1>Conciliação Bancária</h1>
+            <input type="text" id="searchInput" oninput="searchContent()" placeholder="Buscar...">
+            <p>Processo de conciliação bancária</p>
+        </div>
+    </div>
+</body>
+</html>
+    <!-- Módulo Financeiro -->
