@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Financeiro - GesOper</title>
     <style>
         body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
@@ -14,32 +14,32 @@
         .content { flex: 1; padding: 20px; }
         .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
-        a { text-decoration: none; }
+        a { text-decoration: none; color: white; }
     </style>
     <script>
         function toggleSubmenu(id) {
-            const menu = document.getElementById(id);
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </head>
 <body>
     <div class="main-wrapper">
         <div class="sidebar">
-            <h2>GesOper</h2>
-            <button onclick="toggleSubmenu('opSub')">Operacional</button>
-            <div class="submenu" id="opSub">
-                <a href="../../operacional/escala/index.html" style="color:white;">↪ Escala</a><br>
-                <a href="../../operacional/cadastro-jornada/index.html" style="color:white;">↪ Cadastro de Jornada</a>
+            <h2><a href="../../index.html" style="color: white; text-decoration: none;">GesOper</a></h2>
+            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
+            <div id="submenu-operacional" class="submenu">
+                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
+                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
             </div>
-            <button><a href="../../financeiro/index.html" style="color:white;">Financeiro</a></button>
-            <button><a href="../../beneficios/index.html" style="color:white;">Benefícios</a></button>
+            <button><a href="../../financeiro/index.html">Financeiro</a></button>
+            <button><a href="../../beneficios/index.html">Benefícios</a></button>
         </div>
         <div class="content">
             <div class="topbar">
                 <h1>Financeiro</h1>
             </div>
-            <p>Módulo de Gestão Financeira.</p>
+            <p>Módulo de gestão financeira.</p>
         </div>
     </div>
     <footer>
