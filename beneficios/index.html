@@ -1,52 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benefícios - GesOper</title>
-    <style>
-        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
-        .main-wrapper { flex: 1; display: flex; }
-        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
-        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
-        .submenu { display: none; margin-left: 10px; }
-        .content { flex: 1; padding: 20px; }
-        .titulo-fixo { text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; }
-        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
-        a { text-decoration: none; color: white; }
-    </style>
-    <script>
-        function toggleSubmenu(id) {
-            const el = document.getElementById(id);
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="sidebar">
-            <h2><a href="../index.html">GesOper</a></h2>
-            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
-            <div id="submenu-operacional" class="submenu">
-                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
-                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <img src="../img/GesoperCorporate.png" alt="GesOper Corporate" class="logo">
             </div>
-            <button><a href="../../financeiro/index.html">Financeiro</a></button>
-            <button><a href="../../beneficios/index.html">Benefícios</a></button>
-        </div>
-        <div class="content">
             
-<div class="titulo-fixo">
-    <h1>Base de Conhecimento GesOper</h1>
-</div>
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar na base de conhecimento..." class="search-input">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <img src="../img/LogoSolucao.png" alt="Logo Solução" class="logo">
+            </div>
+        </header>
 
-            <h2>Benefícios</h2>
-            <p>Módulo de gestão de benefícios.</p>
-        </div>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><a href="../index.html" style="color: white; text-decoration: none;">Módulos</a></h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('operacional')">
+                        <i class="fas fa-cogs"></i>
+                        <span>Operacional</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="operacional">
+                        <a href="../operacional/escala/index.html" class="submenu-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            Escala
+                        </a>
+                        <a href="../operacional/cadastro-jornada/index.html" class="submenu-item">
+                            <i class="fas fa-clock"></i>
+                            Cadastro de Jornada
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('financeiro')">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="financeiro">
+                        <a href="../financeiro/index.html" class="submenu-item">
+                            <i class="fas fa-chart-line"></i>
+                            Visão Geral
+                        </a>
+                        <a href="../financeiro/conciliacao/index.html" class="submenu-item">
+                            <i class="fas fa-balance-scale"></i>
+                            Conciliação Bancária
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button active" onclick="toggleSubmenu('beneficios')">
+                        <i class="fas fa-gift"></i>
+                        <span>Benefícios</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu open" id="beneficios">
+                        <a href="../beneficios/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <i class="fas fa-utensils"></i>
+                            Vale Alimentação
+                        </a>
+                        <a href="../beneficios/index.html" class="submenu-item">
+                            <i class="fas fa-bus"></i>
+                            Vale Transporte
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Benefícios</span>
+            </div>
+
+            <div class="page-header">
+                <div class="page-icon beneficios">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="page-title">
+                    <h1>Módulo de Benefícios</h1>
+                    <p>Gestão completa de benefícios trabalhistas</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-card">
+                    <div class="card-header">
+                        <h2>Sobre o Módulo de Benefícios</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>O módulo de Benefícios do GesOper oferece ferramentas completas para gestão de benefícios trabalhistas, incluindo vale alimentação, vale transporte e outros benefícios oferecidos pela empresa.</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <h4>Vale Alimentação</h4>
+                                    <p>Gestão completa do benefício alimentação para funcionários</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <h4>Vale Transporte</h4>
+                                    <p>Controle de vale transporte baseado no trajeto do funcionário</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-calculator"></i>
+                                <div>
+                                    <h4>Cálculos Automáticos</h4>
+                                    <p>Cálculo automático de valores e descontos conforme legislação</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-file-alt"></i>
+                                <div>
+                                    <h4>Relatórios</h4>
+                                    <p>Relatórios detalhados de custos e utilização de benefícios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-cards">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Informações Importantes</h3>
+                        </div>
+                        <div class="info-content">
+                            <ul>
+                                <li>Benefícios são calculados automaticamente na folha</li>
+                                <li>Valores seguem as normas da legislação trabalhista</li>
+                                <li>Relatórios são gerados mensalmente</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h3>Ações Rápidas</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary">
+                                <i class="fas fa-plus"></i>
+                                Novo Benefício
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-calculator"></i>
+                                Calcular Valores
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-file-export"></i>
+                                Gerar Relatório
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="documentation-section">
+                <h2>Tipos de Benefícios</h2>
+                <div class="doc-grid">
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>Vale Alimentação</h4>
+                            <p>Benefício para alimentação do funcionário durante o trabalho</p>
+                            <a href="#" class="doc-link">Configurar</a>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>Vale Transporte</h4>
+                            <p>Auxílio para deslocamento casa-trabalho-casa</p>
+                            <a href="#" class="doc-link">Configurar</a>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-medkit"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>Plano de Saúde</h4>
+                            <p>Gestão de planos de saúde empresariais</p>
+                            <a href="#" class="doc-link">Em Breve</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 GesOper - Todos os direitos reservados</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Suporte</a>
+                    <a href="#" class="footer-link">Documentação</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer>
-        ® Gesoper 2025
-    </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

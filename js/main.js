@@ -73,6 +73,18 @@ function initializeSearch() {
             description: 'Módulo de gestão de benefícios',
             url: 'beneficios/index.html',
             category: 'Benefícios'
+        },
+        {
+            title: 'Vale Alimentação',
+            description: 'Gestão de vale alimentação para funcionários',
+            url: 'beneficios/index.html',
+            category: 'Benefícios'
+        },
+        {
+            title: 'Vale Transporte',
+            description: 'Controle de vale transporte',
+            url: 'beneficios/index.html',
+            category: 'Benefícios'
         }
     ];
     
