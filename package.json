@@ -4,8 +4,8 @@
   "description": "Base de Conhecimento GesOper - Site estático",
   "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 3000",
-    "start": "python3 -m http.server 3000"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "gesoper",
@@ -13,8 +13,5 @@
     "documentation"
   ],
   "author": "Robson Mauro",
-  "license": "MIT",
-  "dependencies": {
-    "socket": "^1.0.62"
-  }
+  "license": "MIT"
 }
