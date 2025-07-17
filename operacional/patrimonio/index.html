@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Jornada - GesOper</title>
+    <title>Cadastro de Patrimônio - GesOper</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -48,11 +48,15 @@
                         <i class="fas fa-chevron-down arrow"></i>
                     </button>
                     <div class="submenu open" id="operacional">
+                        <a href="../../operacional/index.html" class="submenu-item">
+                            <i class="fas fa-chart-line"></i>
+                            Visão Geral
+                        </a>
                         <a href="../../operacional/escala/index.html" class="submenu-item">
                             <i class="fas fa-calendar-alt"></i>
                             Escala
                         </a>
-                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
+                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item">
                             <i class="fas fa-clock"></i>
                             Cadastro de Jornada
                         </a>
@@ -64,7 +68,7 @@
                             <i class="fas fa-user-tie"></i>
                             Cadastro de Funcionários
                         </a>
-                        <a href="../../operacional/patrimonio/index.html" class="submenu-item">
+                        <a href="../../operacional/patrimonio/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
                             <i class="fas fa-boxes"></i>
                             Cadastro de Patrimônio
                         </a>
@@ -120,57 +124,94 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="../index.html">Operacional</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Cadastro de Jornada</span>
+                <span>Cadastro de Patrimônio</span>
             </div>
 
             <div class="page-header">
                 <div class="page-icon operacional">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-boxes"></i>
                 </div>
                 <div class="page-title">
-                    <h1>Cadastro de Jornada</h1>
-                    <p>Controle e configuração de jornadas de trabalho</p>
+                    <h1>Cadastro de Patrimônio</h1>
+                    <p>Controle de bens e equipamentos</p>
                 </div>
             </div>
 
             <div class="content-grid">
                 <div class="main-card">
                     <div class="card-header">
-                        <h2>Sobre o Cadastro de Jornada</h2>
+                        <h2>Sobre o Cadastro de Patrimônio</h2>
                     </div>
                     <div class="card-content">
-                        <p>O módulo de Cadastro de Jornada permite configurar e gerenciar as jornadas de trabalho dos funcionários, definindo horários, intervalos e regras específicas para cada tipo de função.</p>
+                        <p>O módulo de Cadastro de Patrimônio permite o controle completo dos bens da empresa, incluindo equipamentos, móveis, veículos e outros ativos, com controle de localização, responsáveis e manutenções.</p>
                         
+                        <div class="process-steps">
+                            <h3>Processo de Cadastramento</h3>
+                            <div class="steps-container">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Identificação</h4>
+                                        <p>Código patrimonial, descrição e categoria do bem</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Dados Técnicos</h4>
+                                        <p>Marca, modelo, número de série e especificações</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Localização</h4>
+                                        <p>Setor, sala e responsável pelo bem</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Valores</h4>
+                                        <p>Valor de aquisição, data de compra e depreciação</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="feature-list">
                             <div class="feature-item">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-barcode"></i>
                                 <div>
-                                    <h4>Configuração de Horários</h4>
-                                    <p>Definição de horários de entrada, saída e intervalos para diferentes jornadas</p>
+                                    <h4>Controle por Código</h4>
+                                    <p>Sistema de códigos únicos para identificação de bens</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-calendar-week"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                                 <div>
-                                    <h4>Jornadas Flexíveis</h4>
-                                    <p>Criação de jornadas personalizadas para diferentes setores e funções</p>
+                                    <h4>Localização</h4>
+                                    <p>Controle de localização física e responsáveis</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-coffee"></i>
+                                <i class="fas fa-wrench"></i>
                                 <div>
-                                    <h4>Controle de Intervalos</h4>
-                                    <p>Gestão de pausas, almoço e outros intervalos obrigatórios</p>
+                                    <h4>Manutenções</h4>
+                                    <p>Histórico de manutenções preventivas e corretivas</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-gavel"></i>
+                                <i class="fas fa-chart-line"></i>
                                 <div>
-                                    <h4>Conformidade Legal</h4>
-                                    <p>Adequação às normas trabalhistas e legislação vigente</p>
+                                    <h4>Depreciação</h4>
+                                    <p>Cálculo automático de depreciação dos bens</p>
                                 </div>
                             </div>
                         </div>
@@ -181,70 +222,102 @@
                     <div class="info-card">
                         <div class="info-header">
                             <i class="fas fa-info-circle"></i>
-                            <h3>Informações Importantes</h3>
+                            <h3>Informações Obrigatórias</h3>
                         </div>
                         <div class="info-content">
                             <ul>
-                                <li>Jornadas devem respeitar os limites legais de horas trabalhadas</li>
-                                <li>Intervalos obrigatórios são calculados automaticamente</li>
-                                <li>Alterações em jornadas ativas requerem aprovação</li>
+                                <li>Código patrimonial único</li>
+                                <li>Descrição detalhada do bem</li>
+                                <li>Categoria e subcategoria</li>
+                                <li>Valor de aquisição</li>
+                                <li>Data de aquisição</li>
+                                <li>Localização atual</li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="quick-actions">
-                        <h3>Ações Rápidas</h3>
-                        <div class="action-buttons">
-                            <button class="action-btn primary">
-                                <i class="fas fa-plus"></i>
-                                Nova Jornada
-                            </button>
-                            <button class="action-btn secondary">
-                                <i class="fas fa-edit"></i>
-                                Editar Existente
-                            </button>
-                            <button class="action-btn secondary">
-                                <i class="fas fa-copy"></i>
-                                Duplicar Jornada
-                            </button>
+                    <div class="actions-card">
+                        <div class="actions-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Ações Disponíveis</h3>
+                        </div>
+                        <div class="actions-content">
+                            <div class="action-group">
+                                <h4>Cadastro</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-plus"></i> Novo Bem</li>
+                                    <li><i class="fas fa-edit"></i> Editar Dados</li>
+                                    <li><i class="fas fa-trash"></i> Baixar Bem</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="action-group">
+                                <h4>Movimentação</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-exchange-alt"></i> Transferir</li>
+                                    <li><i class="fas fa-user-check"></i> Alterar Responsável</li>
+                                    <li><i class="fas fa-search"></i> Localizar Bem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-card">
+                        <div class="tips-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Dicas Importantes</h3>
+                        </div>
+                        <div class="tips-content">
+                            <div class="tip-item">
+                                <i class="fas fa-tag"></i>
+                                <p>Utilize etiquetas físicas com códigos patrimoniais</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <p>Realize inventários periódicos para conferência</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-camera"></i>
+                                <p>Mantenha fotos atualizadas dos bens cadastrados</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="documentation-section">
-                <h2>Tipos de Jornada</h2>
+                <h2>Categorias de Patrimônio</h2>
                 <div class="doc-grid">
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-desktop"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada Diurna</h4>
-                            <p>Horário comercial padrão com intervalos regulamentares</p>
-                            <a href="#" class="doc-link">Configurar</a>
+                            <h4>Equipamentos de TI</h4>
+                            <p>Computadores, impressoras e equipamentos eletrônicos</p>
+                            <a href="#" class="doc-link">Cadastrar</a>
                         </div>
                     </div>
                     
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-couch"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada Noturna</h4>
-                            <p>Trabalho noturno com adicional e regras específicas</p>
-                            <a href="#" class="doc-link">Configurar</a>
+                            <h4>Móveis e Utensílios</h4>
+                            <p>Mesas, cadeiras, armários e utensílios de escritório</p>
+                            <a href="#" class="doc-link">Cadastrar</a>
                         </div>
                     </div>
                     
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-exchange-alt"></i>
+                            <i class="fas fa-car"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada por Turnos</h4>
-                            <p>Sistema de revezamento entre equipes</p>
-                            <a href="#" class="doc-link">Configurar</a>
+                            <h4>Veículos</h4>
+                            <p>Carros, motos e outros veículos da empresa</p>
+                            <a href="#" class="doc-link">Cadastrar</a>
                         </div>
                     </div>
                 </div>

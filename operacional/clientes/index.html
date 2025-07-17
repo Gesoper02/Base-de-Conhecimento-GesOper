@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Jornada - GesOper</title>
+    <title>Cadastro de Clientes - GesOper</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -48,15 +48,19 @@
                         <i class="fas fa-chevron-down arrow"></i>
                     </button>
                     <div class="submenu open" id="operacional">
+                        <a href="../../operacional/index.html" class="submenu-item">
+                            <i class="fas fa-chart-line"></i>
+                            Visão Geral
+                        </a>
                         <a href="../../operacional/escala/index.html" class="submenu-item">
                             <i class="fas fa-calendar-alt"></i>
                             Escala
                         </a>
-                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
+                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item">
                             <i class="fas fa-clock"></i>
                             Cadastro de Jornada
                         </a>
-                        <a href="../../operacional/clientes/index.html" class="submenu-item">
+                        <a href="../../operacional/clientes/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
                             <i class="fas fa-users"></i>
                             Cadastro de Clientes
                         </a>
@@ -120,57 +124,94 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="../index.html">Operacional</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Cadastro de Jornada</span>
+                <span>Cadastro de Clientes</span>
             </div>
 
             <div class="page-header">
                 <div class="page-icon operacional">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-users"></i>
                 </div>
                 <div class="page-title">
-                    <h1>Cadastro de Jornada</h1>
-                    <p>Controle e configuração de jornadas de trabalho</p>
+                    <h1>Cadastro de Clientes</h1>
+                    <p>Gestão completa de clientes e contratos</p>
                 </div>
             </div>
 
             <div class="content-grid">
                 <div class="main-card">
                     <div class="card-header">
-                        <h2>Sobre o Cadastro de Jornada</h2>
+                        <h2>Sobre o Cadastro de Clientes</h2>
                     </div>
                     <div class="card-content">
-                        <p>O módulo de Cadastro de Jornada permite configurar e gerenciar as jornadas de trabalho dos funcionários, definindo horários, intervalos e regras específicas para cada tipo de função.</p>
+                        <p>O módulo de Cadastro de Clientes permite o gerenciamento completo das informações de clientes, incluindo dados pessoais, endereços, contatos, contratos e histórico de relacionamento comercial.</p>
                         
+                        <div class="process-steps">
+                            <h3>Processo de Cadastramento</h3>
+                            <div class="steps-container">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Dados Básicos</h4>
+                                        <p>Inserir informações básicas como razão social, CNPJ/CPF e tipo de cliente</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Endereços</h4>
+                                        <p>Cadastrar endereços comercial, de cobrança e de entrega</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Contatos</h4>
+                                        <p>Registrar telefones, e-mails e pessoas de contato</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Configurações</h4>
+                                        <p>Definir condições comerciais, limites de crédito e observações</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="feature-list">
                             <div class="feature-item">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-building"></i>
                                 <div>
-                                    <h4>Configuração de Horários</h4>
-                                    <p>Definição de horários de entrada, saída e intervalos para diferentes jornadas</p>
+                                    <h4>Dados Empresariais</h4>
+                                    <p>Controle completo de informações corporativas e documentação</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-calendar-week"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                                 <div>
-                                    <h4>Jornadas Flexíveis</h4>
-                                    <p>Criação de jornadas personalizadas para diferentes setores e funções</p>
+                                    <h4>Múltiplos Endereços</h4>
+                                    <p>Cadastro de diferentes endereços para cada finalidade</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-coffee"></i>
+                                <i class="fas fa-file-contract"></i>
                                 <div>
-                                    <h4>Controle de Intervalos</h4>
-                                    <p>Gestão de pausas, almoço e outros intervalos obrigatórios</p>
+                                    <h4>Gestão de Contratos</h4>
+                                    <p>Controle de contratos, vigências e renovações</p>
                                 </div>
                             </div>
                             
                             <div class="feature-item">
-                                <i class="fas fa-gavel"></i>
+                                <i class="fas fa-chart-line"></i>
                                 <div>
-                                    <h4>Conformidade Legal</h4>
-                                    <p>Adequação às normas trabalhistas e legislação vigente</p>
+                                    <h4>Histórico Comercial</h4>
+                                    <p>Acompanhamento do relacionamento e histórico de transações</p>
                                 </div>
                             </div>
                         </div>
@@ -181,69 +222,100 @@
                     <div class="info-card">
                         <div class="info-header">
                             <i class="fas fa-info-circle"></i>
-                            <h3>Informações Importantes</h3>
+                            <h3>Campos Obrigatórios</h3>
                         </div>
                         <div class="info-content">
                             <ul>
-                                <li>Jornadas devem respeitar os limites legais de horas trabalhadas</li>
-                                <li>Intervalos obrigatórios são calculados automaticamente</li>
-                                <li>Alterações em jornadas ativas requerem aprovação</li>
+                                <li>Razão Social ou Nome Completo</li>
+                                <li>CNPJ ou CPF válido</li>
+                                <li>Endereço principal completo</li>
+                                <li>Pelo menos um telefone de contato</li>
+                                <li>E-mail principal</li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="quick-actions">
-                        <h3>Ações Rápidas</h3>
-                        <div class="action-buttons">
-                            <button class="action-btn primary">
-                                <i class="fas fa-plus"></i>
-                                Nova Jornada
-                            </button>
-                            <button class="action-btn secondary">
-                                <i class="fas fa-edit"></i>
-                                Editar Existente
-                            </button>
-                            <button class="action-btn secondary">
-                                <i class="fas fa-copy"></i>
-                                Duplicar Jornada
-                            </button>
+                    <div class="actions-card">
+                        <div class="actions-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Ações Disponíveis</h3>
+                        </div>
+                        <div class="actions-content">
+                            <div class="action-group">
+                                <h4>Cadastro</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-plus"></i> Novo Cliente</li>
+                                    <li><i class="fas fa-edit"></i> Editar Dados</li>
+                                    <li><i class="fas fa-copy"></i> Duplicar Cadastro</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="action-group">
+                                <h4>Consultas</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-search"></i> Buscar Cliente</li>
+                                    <li><i class="fas fa-list"></i> Listar Todos</li>
+                                    <li><i class="fas fa-filter"></i> Filtros Avançados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-card">
+                        <div class="tips-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Dicas Importantes</h3>
+                        </div>
+                        <div class="tips-content">
+                            <div class="tip-item">
+                                <i class="fas fa-check"></i>
+                                <p>Sempre validar CNPJ/CPF antes de finalizar o cadastro</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-sync"></i>
+                                <p>Manter dados de contato sempre atualizados</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>Verificar documentação antes de aprovar crédito</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="documentation-section">
-                <h2>Tipos de Jornada</h2>
+                <h2>Tipos de Cliente</h2>
                 <div class="doc-grid">
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-building"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada Diurna</h4>
-                            <p>Horário comercial padrão com intervalos regulamentares</p>
+                            <h4>Pessoa Jurídica</h4>
+                            <p>Empresas e organizações com CNPJ</p>
                             <a href="#" class="doc-link">Configurar</a>
                         </div>
                     </div>
                     
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada Noturna</h4>
-                            <p>Trabalho noturno com adicional e regras específicas</p>
+                            <h4>Pessoa Física</h4>
+                            <p>Clientes individuais com CPF</p>
                             <a href="#" class="doc-link">Configurar</a>
                         </div>
                     </div>
                     
                     <div class="doc-item">
                         <div class="doc-icon">
-                            <i class="fas fa-exchange-alt"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <div class="doc-content">
-                            <h4>Jornada por Turnos</h4>
-                            <p>Sistema de revezamento entre equipes</p>
+                            <h4>Parceiros</h4>
+                            <p>Fornecedores e parceiros comerciais</p>
                             <a href="#" class="doc-link">Configurar</a>
                         </div>
                     </div>

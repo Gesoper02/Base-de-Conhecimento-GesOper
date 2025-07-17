@@ -57,6 +57,30 @@ function initializeSearch() {
             category: 'Operacional'
         },
         {
+            title: 'Cadastro de Clientes',
+            description: 'Gestão de clientes e contratos',
+            url: 'operacional/clientes/index.html',
+            category: 'Operacional'
+        },
+        {
+            title: 'Cadastro de Funcionários',
+            description: 'Gestão de recursos humanos e funcionários',
+            url: 'operacional/funcionarios/index.html',
+            category: 'Operacional'
+        },
+        {
+            title: 'Cadastro de Patrimônio',
+            description: 'Controle de bens e equipamentos',
+            url: 'operacional/patrimonio/index.html',
+            category: 'Operacional'
+        },
+        {
+            title: 'Serviços Complementares',
+            description: 'Gestão de serviços adicionais e especializados',
+            url: 'operacional/servicos/index.html',
+            category: 'Operacional'
+        },
+        {
             title: 'Conciliação Bancária',
             description: 'Processo de validação de lançamentos bancários',
             url: 'financeiro/conciliacao/index.html',
