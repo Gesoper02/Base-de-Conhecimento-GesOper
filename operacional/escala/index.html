@@ -1,52 +1,253 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escala - GesOper</title>
-    <style>
-        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
-        .main-wrapper { flex: 1; display: flex; }
-        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
-        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
-        .submenu { display: none; margin-left: 10px; }
-        .content { flex: 1; padding: 20px; }
-        .titulo-fixo { text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; }
-        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
-        a { text-decoration: none; color: white; }
-    </style>
-    <script>
-        function toggleSubmenu(id) {
-            const el = document.getElementById(id);
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="sidebar">
-            <h2><a href="../../index.html">GesOper</a></h2>
-            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
-            <div id="submenu-operacional" class="submenu">
-                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
-                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <img src="../../img/GesoperCorporate.png" alt="GesOper Corporate" class="logo">
             </div>
-            <button><a href="../../financeiro/index.html">Financeiro</a></button>
-            <button><a href="../../beneficios/index.html">Benefícios</a></button>
-        </div>
-        <div class="content">
             
-<div class="titulo-fixo">
-    <h1>Base de Conhecimento GesOper</h1>
-</div>
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar na base de conhecimento..." class="search-input">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <img src="../../img/LogoSolucao.png" alt="Logo Solução" class="logo">
+            </div>
+        </header>
 
-            <h2>Escala</h2>
-            <p>Submódulo de controle de escalas.</p>
-        </div>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><a href="../../index.html" style="color: white; text-decoration: none;">Módulos</a></h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <button class="nav-button active" onclick="toggleSubmenu('operacional')">
+                        <i class="fas fa-cogs"></i>
+                        <span>Operacional</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu open" id="operacional">
+                        <a href="../../operacional/escala/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <i class="fas fa-calendar-alt"></i>
+                            Escala
+                        </a>
+                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item">
+                            <i class="fas fa-clock"></i>
+                            Cadastro de Jornada
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('financeiro')">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="financeiro">
+                        <a href="../../financeiro/index.html" class="submenu-item">
+                            <i class="fas fa-chart-line"></i>
+                            Visão Geral
+                        </a>
+                        <a href="../../financeiro/conciliacao/index.html" class="submenu-item">
+                            <i class="fas fa-balance-scale"></i>
+                            Conciliação Bancária
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('beneficios')">
+                        <i class="fas fa-gift"></i>
+                        <span>Benefícios</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="beneficios">
+                        <a href="../../beneficios/index.html" class="submenu-item">
+                            <i class="fas fa-utensils"></i>
+                            Vale Alimentação
+                        </a>
+                        <a href="../../beneficios/index.html" class="submenu-item">
+                            <i class="fas fa-bus"></i>
+                            Vale Transporte
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <a href="../../index.html"><i class="fas fa-home"></i> Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html">Operacional</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Escala</span>
+            </div>
+
+            <div class="page-header">
+                <div class="page-icon operacional">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="page-title">
+                    <h1>Controle de Escala</h1>
+                    <p>Gestão e organização de escalas de trabalho</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-card">
+                    <div class="card-header">
+                        <h2>Sobre o Módulo de Escala</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>O módulo de Escala do GesOper permite o controle completo das escalas de trabalho dos funcionários, oferecendo ferramentas para:</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-calendar-plus"></i>
+                                <div>
+                                    <h4>Criação de Escalas</h4>
+                                    <p>Criação e configuração de escalas personalizadas para diferentes setores e funções</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h4>Alocação de Funcionários</h4>
+                                    <p>Distribuição automática ou manual de funcionários nas escalas de trabalho</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Controle de Horários</h4>
+                                    <p>Definição de horários de entrada, saída e intervalos para cada escala</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-exchange-alt"></i>
+                                <div>
+                                    <h4>Trocas e Substituições</h4>
+                                    <p>Gerenciamento de trocas de plantão e substituições entre funcionários</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-cards">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Informações Importantes</h3>
+                        </div>
+                        <div class="info-content">
+                            <ul>
+                                <li>As escalas devem ser configuradas com antecedência mínima de 48 horas</li>
+                                <li>Alterações em escalas ativas requerem aprovação do supervisor</li>
+                                <li>O sistema gera alertas automáticos para conflitos de horário</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h3>Ações Rápidas</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary">
+                                <i class="fas fa-plus"></i>
+                                Nova Escala
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-calendar"></i>
+                                Ver Calendário
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-file-export"></i>
+                                Exportar Dados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="documentation-section">
+                <h2>Documentação e Tutoriais</h2>
+                <div class="doc-grid">
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>Manual do Usuário</h4>
+                            <p>Guia completo para utilização do módulo de escala</p>
+                            <a href="#" class="doc-link">Acessar Manual</a>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>Tutorial em Vídeo</h4>
+                            <p>Aprenda a usar o sistema através de vídeos explicativos</p>
+                            <a href="#" class="doc-link">Assistir Vídeos</a>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="doc-content">
+                            <h4>FAQ</h4>
+                            <p>Perguntas frequentes sobre o módulo de escala</p>
+                            <a href="#" class="doc-link">Ver FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 GesOper - Todos os direitos reservados</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Suporte</a>
+                    <a href="#" class="footer-link">Documentação</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer>
-        Gesoper ® - 2025
-    </footer>
+
+    <script src="../../js/main.js"></script>
 </body>
 </html>

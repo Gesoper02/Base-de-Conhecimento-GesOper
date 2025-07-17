@@ -1,66 +1,286 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Conciliação Bancária</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciliação Bancária - GesOper</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Conciliação Bancária</h1>
-    </header>
-    <main>
-        <section id="intro">
-            <h2>O que é a Conciliação Bancária?</h2>
-            <p>
-                Toda vez que uma conta banco é movimentada através do fluxo de caixa, ela mantém um registro dentro do módulo administrativo para posterior validação junto ao arquivo de extrato (OFX) gerado a partir do banco. Esse processo de validação de lançamentos chamamos de conciliação bancária.
-            </p>
-            <p>
-                Para acessar o programa de conciliação bancária, abra o menu <strong>“Tesouraria”</strong> e em seguida <strong>“Conciliação bancária”</strong>. Inicialmente, dependemos de um arquivo de conciliação bancária que deve ser obtido através do site do banco. Normalmente, o processo é feito sob o dia anterior ou semana anterior.
-            </p>
-            <p>
-                O primeiro passo é definir a data nos campos <strong>Data inicial</strong> e <strong>Data final</strong>, obter o arquivo OFX do banco, clicar em <strong>“Importar OFX”</strong> e depois em <strong>“Pesquisar”</strong>.
-            </p>
-            <p>
-                No lado esquerdo, <strong>Extrato Bancário</strong> exibe os dados do OFX. No lado direito, <strong>Gesoper ADM</strong> mostra os lançamentos do fluxo de caixa da conta selecionada.
-            </p>
-            <p>
-                É possível excluir registros do lado esquerdo com o botão <strong>“Excluir Lançamento”</strong>, por exemplo, para importar novamente. Também é possível lançar um estorno com o botão <strong>“Estornar Selecionados”</strong> e desfazer com o botão <strong>“Desfazer Estorno”</strong>.
-            </p>
-            <p>
-                Existem filtros úteis como <strong>“Ocultar Conciliados”</strong>, <strong>“Tipo”</strong> (Débito, Crédito ou Todos) e <strong>Valor</strong>, permitindo localizar lançamentos específicos.
-            </p>
-            <p>
-                No lado direito, <strong>Gesoper ADM</strong>, temos ações como:
-                <ul>
-                    <li><strong>“Marcar Iguais”</strong>: marca lançamentos com data e valor idênticos em ambos os lados.</li>
-                    <li><strong>“Conciliar Selecionados”</strong>: efetiva a conciliação dos registros marcados.</li>
-                    <li><strong>“Ajustar Conciliação”</strong>: corrige diferenças de centavos entre valores.</li>
-                    <li><strong>“Marcar Conciliados”</strong> e <strong>“Desmarcar Conciliados”</strong>: gerenciam o que é exibido na tela.</li>
-                    <li><strong>“Detalhar”</strong>: mostra os detalhes do lançamento selecionado.</li>
-                    <li><strong>“Gerar Lançamento”</strong>: cria lançamentos não existentes no sistema como tarifas, juros etc.</li>
-                    <li><strong>“Listar”</strong>: gera relatório conforme o filtro usado – Tudo, Não Conciliados ou Conciliados.</li>
-                </ul>
-            </p>
-        </section>
-        <section id="procedimentos">
-            <h2>Procedimentos</h2>
-            <ol>
-                <li>Acesse o menu Financeiro &gt;Tesouraria&gt; Conciliação.</li>
-                <li>Escolha o período desejado.</li>
-                <li>Importe o extrato bancário em formato compatível.</li>
-                <li>Compare os lançamentos e identifique divergências.</li>
-                <li>Ajuste ou registre lançamentos conforme necessário.</li>
-            </ol>
-        </section>
-        <section id="prints">
-            <h2>Tela da Conciliação Bancária</h2>
-            <img src="conciliacao_tela2.png" alt="Tela de Conciliação 2" width="900">
-        </section>
-    </main>
-    <footer>
-        <p>&copy; Gesoper ® - 2025 - Conciliação Bancária</p>
-    </footer>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <img src="../../img/GesoperCorporate.png" alt="GesOper Corporate" class="logo">
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar na base de conhecimento..." class="search-input">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <img src="../../img/LogoSolucao.png" alt="Logo Solução" class="logo">
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><a href="../../index.html" style="color: white; text-decoration: none;">Módulos</a></h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('operacional')">
+                        <i class="fas fa-cogs"></i>
+                        <span>Operacional</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="operacional">
+                        <a href="../../operacional/escala/index.html" class="submenu-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            Escala
+                        </a>
+                        <a href="../../operacional/cadastro-jornada/index.html" class="submenu-item">
+                            <i class="fas fa-clock"></i>
+                            Cadastro de Jornada
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button active" onclick="toggleSubmenu('financeiro')">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu open" id="financeiro">
+                        <a href="../../financeiro/index.html" class="submenu-item">
+                            <i class="fas fa-chart-line"></i>
+                            Visão Geral
+                        </a>
+                        <a href="../../financeiro/conciliacao/index.html" class="submenu-item" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <i class="fas fa-balance-scale"></i>
+                            Conciliação Bancária
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-button" onclick="toggleSubmenu('beneficios')">
+                        <i class="fas fa-gift"></i>
+                        <span>Benefícios</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="submenu" id="beneficios">
+                        <a href="../../beneficios/index.html" class="submenu-item">
+                            <i class="fas fa-utensils"></i>
+                            Vale Alimentação
+                        </a>
+                        <a href="../../beneficios/index.html" class="submenu-item">
+                            <i class="fas fa-bus"></i>
+                            Vale Transporte
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <a href="../../index.html"><i class="fas fa-home"></i> Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html">Financeiro</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Conciliação Bancária</span>
+            </div>
+
+            <div class="page-header">
+                <div class="page-icon financeiro">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="page-title">
+                    <h1>Conciliação Bancária</h1>
+                    <p>Validação e controle de lançamentos bancários</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-card">
+                    <div class="card-header">
+                        <h2>O que é a Conciliação Bancária?</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Toda vez que uma conta banco é movimentada através do fluxo de caixa, ela mantém um registro dentro do módulo administrativo para posterior validação junto ao arquivo de extrato (OFX) gerado a partir do banco. Esse processo de validação de lançamentos chamamos de conciliação bancária.</p>
+                        
+                        <div class="process-steps">
+                            <h3>Processo de Conciliação</h3>
+                            <div class="steps-container">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Definir Período</h4>
+                                        <p>Configure as datas inicial e final nos campos correspondentes</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Importar OFX</h4>
+                                        <p>Obtenha o arquivo OFX do banco e importe através do botão "Importar OFX"</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Pesquisar</h4>
+                                        <p>Clique em "Pesquisar" para carregar os dados do período selecionado</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Conciliar</h4>
+                                        <p>Compare e concilie os lançamentos entre extrato bancário e sistema</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="interface-explanation">
+                            <h3>Interface do Sistema</h3>
+                            <div class="interface-grid">
+                                <div class="interface-item">
+                                    <div class="interface-icon left">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="interface-content">
+                                        <h4>Extrato Bancário (Esquerda)</h4>
+                                        <p>Exibe os dados importados do arquivo OFX do banco</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="interface-item">
+                                    <div class="interface-icon right">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="interface-content">
+                                        <h4>GesOper ADM (Direita)</h4>
+                                        <p>Mostra os lançamentos do fluxo de caixa da conta selecionada</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-container">
+                            <h3>Tela do Sistema</h3>
+                            <img src="conciliacao_tela2.png" alt="Tela de Conciliação Bancária" class="screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-cards">
+                    <div class="actions-card">
+                        <div class="actions-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Ações Disponíveis</h3>
+                        </div>
+                        <div class="actions-content">
+                            <div class="action-group">
+                                <h4>Extrato Bancário</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-trash"></i> Excluir Lançamento</li>
+                                    <li><i class="fas fa-undo"></i> Estornar Selecionados</li>
+                                    <li><i class="fas fa-redo"></i> Desfazer Estorno</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="action-group">
+                                <h4>GesOper ADM</h4>
+                                <ul class="action-list">
+                                    <li><i class="fas fa-check-double"></i> Marcar Iguais</li>
+                                    <li><i class="fas fa-handshake"></i> Conciliar Selecionados</li>
+                                    <li><i class="fas fa-adjust"></i> Ajustar Conciliação</li>
+                                    <li><i class="fas fa-plus-circle"></i> Gerar Lançamento</li>
+                                    <li><i class="fas fa-list"></i> Listar Relatório</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filters-card">
+                        <div class="filters-header">
+                            <i class="fas fa-filter"></i>
+                            <h3>Filtros Disponíveis</h3>
+                        </div>
+                        <div class="filters-content">
+                            <div class="filter-item">
+                                <i class="fas fa-eye-slash"></i>
+                                <span>Ocultar Conciliados</span>
+                            </div>
+                            <div class="filter-item">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Tipo (Débito/Crédito)</span>
+                            </div>
+                            <div class="filter-item">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Filtro por Valor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-card">
+                        <div class="tips-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Dicas Importantes</h3>
+                        </div>
+                        <div class="tips-content">
+                            <div class="tip-item">
+                                <i class="fas fa-clock"></i>
+                                <p>Realize a conciliação preferencialmente no dia seguinte</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-search"></i>
+                                <p>Use os filtros para localizar lançamentos específicos</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-balance-scale"></i>
+                                <p>Verifique diferenças de centavos com "Ajustar Conciliação"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 GesOper - Todos os direitos reservados</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Suporte</a>
+                    <a href="#" class="footer-link">Documentação</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/main.js"></script>
 </body>
 </html>
