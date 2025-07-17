@@ -125,6 +125,14 @@
                     <div class="card-content">
                         <p>Toda vez que uma conta banco é movimentada através do fluxo de caixa, ela mantém um registro dentro do módulo administrativo para posterior validação junto ao arquivo de extrato (OFX) gerado a partir do banco. Esse processo de validação de lançamentos chamamos de conciliação bancária.</p>
                         
+                        <div class="alert-info">
+                            <div class="alert-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h4>Definição Técnica</h4>
+                            </div>
+                            <p>A conciliação bancária é o processo de comparação entre os registros contábeis da empresa e os extratos bancários, identificando e justificando as diferenças existentes entre ambos os saldos.</p>
+                        </div>
+
                         <div class="process-steps">
                             <h3>Processo de Conciliação</h3>
                             <div class="steps-container">
@@ -139,8 +147,8 @@
                                 <div class="step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <h4>Importar OFX</h4>
-                                        <p>Obtenha o arquivo OFX do banco e importe através do botão "Importar OFX"</p>
+                                        <h4>Importar Arquivo OFX</h4>
+                                        <p>Baixe o arquivo OFX (Open Financial Exchange) do internet banking e importe no sistema através do botão "Importar OFX"</p>
                                     </div>
                                 </div>
                                 
@@ -155,23 +163,23 @@
                                 <div class="step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
-                                        <h4>Conciliar</h4>
-                                        <p>Compare e concilie os lançamentos entre extrato bancário e sistema</p>
+                                        <h4>Análise e Conciliação</h4>
+                                        <p>Compare os lançamentos do extrato bancário com os registros do sistema, identificando divergências e realizando os ajustes necessários</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="interface-explanation">
-                            <h3>Interface do Sistema</h3>
+                            <h3>Layout da Tela de Conciliação</h3>
                             <div class="interface-grid">
                                 <div class="interface-item">
                                     <div class="interface-icon left">
                                         <i class="fas fa-university"></i>
                                     </div>
                                     <div class="interface-content">
-                                        <h4>Extrato Bancário (Esquerda)</h4>
-                                        <p>Exibe os dados importados do arquivo OFX do banco</p>
+                                        <h4>Painel Esquerdo - Extrato Bancário</h4>
+                                        <p>Apresenta os lançamentos importados do arquivo OFX, mostrando data, histórico, valor e status de conciliação</p>
                                     </div>
                                 </div>
                                 
@@ -180,13 +188,47 @@
                                         <i class="fas fa-desktop"></i>
                                     </div>
                                     <div class="interface-content">
-                                        <h4>GesOper ADM (Direita)</h4>
-                                        <p>Mostra os lançamentos do fluxo de caixa da conta selecionada</p>
+                                        <h4>Painel Direito - Sistema GesOper</h4>
+                                        <p>Exibe os lançamentos registrados no fluxo de caixa interno, permitindo comparação e conciliação com o extrato bancário</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="conciliation-types">
+                            <h3>Tipos de Conciliação</h3>
+                            <div class="types-grid">
+                                <div class="type-item">
+                                    <div class="type-icon automatic">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <div class="type-content">
+                                        <h4>Conciliação Automática</h4>
+                                        <p>O sistema identifica automaticamente lançamentos com valores e datas idênticos</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="type-item">
+                                    <div class="type-icon manual">
+                                        <i class="fas fa-hand-pointer"></i>
+                                    </div>
+                                    <div class="type-content">
+                                        <h4>Conciliação Manual</h4>
+                                        <p>Permite ao usuário selecionar e conciliar lançamentos manualmente</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="type-item">
+                                    <div class="type-icon adjustment">
+                                        <i class="fas fa-adjust"></i>
+                                    </div>
+                                    <div class="type-content">
+                                        <h4>Ajuste de Conciliação</h4>
+                                        <p>Corrige pequenas diferenças de centavos entre lançamentos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="screenshot-container">
                             <h3>Tela do Sistema</h3>
                             <img src="conciliacao_tela2.png" alt="Tela de Conciliação Bancária" class="screenshot">
@@ -202,22 +244,23 @@
                         </div>
                         <div class="actions-content">
                             <div class="action-group">
-                                <h4>Extrato Bancário</h4>
+                                <h4>Operações no Extrato Bancário</h4>
                                 <ul class="action-list">
-                                    <li><i class="fas fa-trash"></i> Excluir Lançamento</li>
-                                    <li><i class="fas fa-undo"></i> Estornar Selecionados</li>
-                                    <li><i class="fas fa-redo"></i> Desfazer Estorno</li>
+                                    <li><i class="fas fa-trash"></i> Excluir lançamentos incorretos</li>
+                                    <li><i class="fas fa-undo"></i> Estornar lançamentos selecionados</li>
+                                    <li><i class="fas fa-redo"></i> Desfazer operação de estorno</li>
+                                    <li><i class="fas fa-file-import"></i> Reimportar arquivo OFX</li>
                                 </ul>
                             </div>
                             
                             <div class="action-group">
-                                <h4>GesOper ADM</h4>
+                                <h4>Operações no Sistema GesOper</h4>
                                 <ul class="action-list">
-                                    <li><i class="fas fa-check-double"></i> Marcar Iguais</li>
-                                    <li><i class="fas fa-handshake"></i> Conciliar Selecionados</li>
-                                    <li><i class="fas fa-adjust"></i> Ajustar Conciliação</li>
-                                    <li><i class="fas fa-plus-circle"></i> Gerar Lançamento</li>
-                                    <li><i class="fas fa-list"></i> Listar Relatório</li>
+                                    <li><i class="fas fa-check-double"></i> Identificar lançamentos idênticos automaticamente</li>
+                                    <li><i class="fas fa-handshake"></i> Conciliar lançamentos selecionados manualmente</li>
+                                    <li><i class="fas fa-adjust"></i> Ajustar diferenças de centavos</li>
+                                    <li><i class="fas fa-plus-circle"></i> Criar novos lançamentos no sistema</li>
+                                    <li><i class="fas fa-list"></i> Gerar relatório de conciliação</li>
                                 </ul>
                             </div>
                         </div>
@@ -229,18 +272,24 @@
                             <h3>Filtros Disponíveis</h3>
                         </div>
                         <div class="filters-content">
-                            <div class="filter-item">
-                                <i class="fas fa-eye-slash"></i>
-                                <span>Ocultar Conciliados</span>
-                            </div>
-                            <div class="filter-item">
-                                <i class="fas fa-exchange-alt"></i>
-                                <span>Tipo (Débito/Crédito)</span>
-                            </div>
-                            <div class="filter-item">
-                                <i class="fas fa-dollar-sign"></i>
-                                <span>Filtro por Valor</span>
-                            </div>
+                            <ul class="filter-list">
+                                <li class="filter-item">
+                                    <i class="fas fa-eye-slash"></i>
+                                    <span>Ocultar lançamentos já conciliados</span>
+                                </li>
+                                <li class="filter-item">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Filtrar por tipo (Débito/Crédito)</span>
+                                </li>
+                                <li class="filter-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>Filtrar por faixa de valores</span>
+                                </li>
+                                <li class="filter-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Filtrar por período específico</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -250,18 +299,63 @@
                             <h3>Dicas Importantes</h3>
                         </div>
                         <div class="tips-content">
-                            <div class="tip-item">
-                                <i class="fas fa-clock"></i>
-                                <p>Realize a conciliação preferencialmente no dia seguinte</p>
-                            </div>
-                            <div class="tip-item">
-                                <i class="fas fa-search"></i>
-                                <p>Use os filtros para localizar lançamentos específicos</p>
-                            </div>
-                            <div class="tip-item">
-                                <i class="fas fa-balance-scale"></i>
-                                <p>Verifique diferenças de centavos com "Ajustar Conciliação"</p>
-                            </div>
+                            <ul class="tips-list">
+                                <li class="tip-item">
+                                    <i class="fas fa-clock"></i>
+                                    <p>Realize a conciliação diariamente, preferencialmente no dia seguinte ao movimento</p>
+                                </li>
+                                <li class="tip-item">
+                                    <i class="fas fa-search"></i>
+                                    <p>Utilize os filtros disponíveis para localizar lançamentos específicos rapidamente</p>
+                                </li>
+                                <li class="tip-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <p>Para diferenças de centavos, utilize a função "Ajustar Conciliação"</p>
+                                </li>
+                                <li class="tip-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <p>Mantenha backup dos arquivos OFX para consultas futuras</p>
+                                </li>
+                                <li class="tip-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <p>Verifique sempre a integridade dos dados antes de finalizar a conciliação</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="documentation-section">
+                <h2>Situações Especiais na Conciliação</h2>
+                <div class="situations-grid">
+                    <div class="situation-item">
+                        <div class="situation-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="situation-content">
+                            <h4>Lançamentos Não Localizados</h4>
+                            <p>Quando um lançamento existe no extrato mas não no sistema, deve-se verificar se foi registrado corretamente no fluxo de caixa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="situation-item">
+                        <div class="situation-icon info">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="situation-content">
+                            <h4>Diferenças de Valores</h4>
+                            <p>Pequenas diferenças podem ocorrer devido a arredondamentos ou taxas. Use a função de ajuste para corrigi-las</p>
+                        </div>
+                    </div>
+                    
+                    <div class="situation-item">
+                        <div class="situation-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="situation-content">
+                            <h4>Lançamentos Futuros</h4>
+                            <p>Lançamentos com data futura no sistema devem ser verificados quanto à sua real efetivação no banco</p>
                         </div>
                     </div>
                 </div>

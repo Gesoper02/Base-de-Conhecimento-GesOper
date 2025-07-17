@@ -1311,6 +1311,209 @@ body {
     border-bottom-color: #6a5a2d;
 }
 
+/* Alert Info Component */
+.alert-info {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: var(--border-radius);
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.alert-header {
+    padding: 16px;
+    background: #2196f3;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.alert-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.alert-info p {
+    padding: 16px;
+    margin: 0;
+    color: #1565c0;
+    line-height: 1.5;
+}
+
+/* Conciliation Types */
+.conciliation-types {
+    margin: 32px 0;
+}
+
+.conciliation-types h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.type-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.type-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.type-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.type-icon.automatic {
+    background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+}
+
+.type-icon.manual {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+}
+
+.type-icon.adjustment {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+}
+
+.type-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.type-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Situations Grid */
+.situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.situation-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.situation-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.situation-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.situation-icon.warning {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.situation-icon.info {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+}
+
+.situation-icon.success {
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+}
+
+.situation-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.situation-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Improved Lists */
+.filter-list,
+.tips-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-list .filter-item,
+.tips-list .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.filter-list .filter-item:last-child,
+.tips-list .tip-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Dark theme adjustments for new components */
+[data-theme="dark"] .alert-info {
+    background: #1a3d5a;
+    border-color: #2196f3;
+}
+
+[data-theme="dark"] .alert-info p {
+    color: #90caf9;
+}
+
+[data-theme="dark"] .type-item,
+[data-theme="dark"] .situation-item {
+    background: var(--primary-color);
+}
+
+[data-theme="dark"] .type-item:hover,
+[data-theme="dark"] .situation-item:hover {
+    background: #404040;
+}
 /* Responsive adjustments for conciliation page */
 @media (max-width: 768px) {
     .steps-container {
@@ -1318,6 +1521,11 @@ body {
     }
     
     .interface-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .types-grid,
+    .situations-grid {
         grid-template-columns: 1fr;
     }
     

@@ -82,13 +82,13 @@ function initializeSearch() {
         },
         {
             title: 'Conciliação Bancária',
-            description: 'Processo de validação de lançamentos bancários',
+            description: 'Validação automática entre registros internos e extratos bancários OFX',
             url: 'financeiro/conciliacao/index.html',
             category: 'Financeiro'
         },
         {
             title: 'Financeiro',
-            description: 'Módulo de gestão financeira',
+            description: 'Gestão completa de fluxo de caixa, contas e relatórios financeiros',
             url: 'financeiro/index.html',
             category: 'Financeiro'
         },
