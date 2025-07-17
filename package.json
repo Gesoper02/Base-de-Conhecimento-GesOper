@@ -7,7 +7,14 @@
     "dev": "python3 -m http.server 3000",
     "start": "python3 -m http.server 3000"
   },
-  "keywords": ["gesoper", "knowledge-base", "documentation"],
+  "keywords": [
+    "gesoper",
+    "knowledge-base",
+    "documentation"
+  ],
   "author": "Robson Mauro",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "socket": "^1.0.62"
+  }
 }
