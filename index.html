@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Base de Conhecimento GesOper</title>
+    <style>
+        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
+        .main-wrapper { flex: 1; display: flex; }
+        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
+        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
+        .submenu { display: none; margin-left: 10px; }
+        .content { flex: 1; padding: 20px; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
+        a { text-decoration: none; color: white; }
+    </style>
+    <script>
+        function toggleSubmenu(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <h2><a href="index.html">GesOper</a></h2>
+            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
+            <div id="submenu-operacional" class="submenu">
+                <a href="operacional/escala/index.html">↪ Escala</a><br>
+                <a href="operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
+            </div>
+            <button><a href="financeiro/index.html">Financeiro</a></button>
+            <button><a href="beneficios/index.html">Benefícios</a></button>
+        </div>
+        <div class="content">
+            <div class="topbar">
+                <h1>Base de Conhecimento GesOper</h1>
+            </div>
+            <p>Bem-vindo à base de conhecimento do sistema GesOper. Use o menu lateral para navegar pelos módulos.</p>
+        </div>
+    </div>
+    <footer>
+        @ 2025 - Gesoper
+    </footer>
+</body>
+</html>
