@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Conciliação Bancária - GesOper</title>
+    <style>
+        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
+        .main-wrapper { flex: 1; display: flex; }
+        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
+        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
+        .submenu { display: none; margin-left: 10px; }
+        .content { flex: 1; padding: 20px; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
+        a { text-decoration: none; color: white; }
+        
+        /* Estilos específicos para conciliação bancária */
+        .section { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .section h2 { color: #003973; margin-top: 0; }
+        .feature-list { list-style-type: none; padding: 0; }
+        .feature-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .feature-list li:before { content: "✓ "; color: #28a745; font-weight: bold; }
+        .process-steps { counter-reset: step-counter; }
+        .process-steps li { counter-increment: step-counter; margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .process-steps li:before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: #003973; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+        .highlight-box { background-color: #f8f9fa; border-left: 4px solid #003973; padding: 15px; margin: 15px 0; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .two-column { grid-template-columns: 1fr; } }
+    </style>
+    <script>
+        function toggleSubmenu(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <h2><a href="../../index.html" style="color: white; text-decoration: none;">GesOper</a></h2>
+            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
+            <div id="submenu-operacional" class="submenu">
+                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
+                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
+            </div>
+            <button onclick="toggleSubmenu('submenu-financeiro')">Financeiro</button>
+            <div id="submenu-financeiro" class="submenu" style="display: block;">
+                <a href="../../financeiro/index.html">↪ Visão Geral</a><br>
+                <a href="../../financeiro/conciliacao-bancaria/index.html">↪ Conciliação Bancária</a>
+            </div>
+            <button><a href="../../beneficios/index.html">Benefícios</a></button>
+        </div>
+        <div class="content">
+            <div class="topbar">
+                <h1>Conciliação Bancária</h1>
+            </div>
+            
+            <div class="section">
+                <h2>Visão Geral</h2>
+                <p>O módulo de Conciliação Bancária do GesOper permite o controle e acompanhamento das movimentações financeiras, garantindo a precisão entre os registros internos e os extratos bancários.</p>
+                
+                <div class="highlight-box">
+                    <strong>Objetivo:</strong> Assegurar que todas as transações financeiras estejam corretamente registradas e conciliadas com as informações bancárias.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Principais Funcionalidades</h2>
+                <div class="two-column">
+                    <div>
+                        <h3>Controle de Movimentações</h3>
+                        <ul class="feature-list">
+                            <li>Importação de extratos bancários</li>
+                            <li>Registro de lançamentos manuais</li>
+                            <li>Categorização de transações</li>
+                            <li>Controle de saldos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Relatórios e Análises</h3>
+                        <ul class="feature-list">
+                            <li>Relatório de conciliação</li>
+                            <li>Demonstrativo de pendências</li>
+                            <li>Análise de divergências</li>
+                            <li>Histórico de movimentações</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Processo de Conciliação</h2>
+                <ol class="process-steps">
+                    <li><strong>Importação do Extrato:</strong> Carregue o extrato bancário no sistema através de arquivo OFX, CSV ou digitação manual.</li>
+                    <li><strong>Identificação Automática:</strong> O sistema identifica automaticamente transações já registradas através de critérios como valor, data e histórico.</li>
+                    <li><strong>Conciliação Manual:</strong> Revise e concilie manualmente as transações não identificadas automaticamente.</li>
+                    <li><strong>Ajustes e Correções:</strong> Realize os ajustes necessários para divergências encontradas.</li>
+                    <li><strong>Fechamento:</strong> Finalize a conciliação e gere os relatórios de controle.</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>Tipos de Transações</h2>
+                <div class="two-column">
+                    <div>
+                        <h3>Entradas</h3>
+                        <ul>
+                            <li>Recebimentos de clientes</li>
+                            <li>Transferências recebidas</li>
+                            <li>Rendimentos de aplicações</li>
+                            <li>Outros créditos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Saídas</h3>
+                        <ul>
+                            <li>Pagamentos a fornecedores</li>
+                            <li>Transferências enviadas</li>
+                            <li>Tarifas bancárias</li>
+                            <li>Outros débitos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Benefícios do Sistema</h2>
+                <ul class="feature-list">
+                    <li>Redução de erros manuais</li>
+                    <li>Maior agilidade no processo</li>
+                    <li>Controle financeiro mais preciso</li>
+                    <li>Identificação rápida de divergências</li>
+                    <li>Histórico completo de movimentações</li>
+                    <li>Relatórios gerenciais detalhados</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Configurações Importantes</h2>
+                <div class="highlight-box">
+                    <p><strong>Antes de iniciar:</strong> Certifique-se de que as contas bancárias estejam devidamente cadastradas no sistema e que os parâmetros de conciliação estejam configurados conforme as necessidades da empresa.</p>
+                </div>
+                
+                <h3>Parâmetros Configuráveis</h3>
+                <ul>
+                    <li>Tolerância para diferenças de valores</li>
+                    <li>Período de busca para conciliação automática</li>
+                    <li>Critérios de identificação de transações</li>
+                    <li>Categorias padrão para classificação</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        @ 2025 - Gesoper
+    </footer>
+</body>
+</html>
