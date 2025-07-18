@@ -1,355 +1,110 @@
-// Variáveis globais
-let currentTheme = localStorage.getItem('theme') || 'light';
-let sidebarOpen = false;
-
-// Inicialização
+// Funcionalidades principais do site
 document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme();
-    initializeSearch();
-    initializeSidebar();
-    initializeMenuToggle();
-});
-
-// Gerenciamento de tema
-function initializeTheme() {
+    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
-    // Aplicar tema salvo
-    if (currentTheme === 'dark') {
-        body.setAttribute('data-theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
     
-    // Event listener para toggle de tema
     themeToggle.addEventListener('click', function() {
-        if (currentTheme === 'light') {
-            currentTheme = 'dark';
-            body.setAttribute('data-theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            currentTheme = 'light';
-            body.removeAttribute('data-theme');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        localStorage.setItem('theme', currentTheme);
-    });
-}
-
-// Sistema de busca
-function initializeSearch() {
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    
-    // Dados para busca
-    const searchData = [
-        {
-            title: 'Escala',
-            description: 'Submódulo de controle de escalas',
-            url: 'operacional/escala/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Cadastro de Jornada',
-            description: 'Submódulo de controle de jornada',
-            url: 'operacional/cadastro-jornada/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Cadastro de Clientes',
-            description: 'Gestão de clientes e contratos',
-            url: 'operacional/clientes/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Cadastro de Funcionários',
-            description: 'Gestão de recursos humanos e funcionários',
-            url: 'operacional/funcionarios/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Cadastro de Patrimônio',
-            description: 'Controle de bens e equipamentos',
-            url: 'operacional/patrimonio/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Serviços Complementares',
-            description: 'Gestão de serviços adicionais e especializados',
-            url: 'operacional/servicos/index.html',
-            category: 'Operacional'
-        },
-        {
-            title: 'Conciliação Bancária',
-            description: 'Validação automática entre registros internos e extratos bancários OFX',
-            url: 'financeiro/conciliacao/index.html',
-            category: 'Financeiro'
-        },
-        {
-            title: 'Financeiro',
-            description: 'Gestão completa de fluxo de caixa, contas e relatórios financeiros',
-            url: 'financeiro/index.html',
-            category: 'Financeiro'
-        },
-        {
-            title: 'Benefícios',
-            description: 'Módulo de gestão de benefícios',
-            url: 'beneficios/index.html',
-            category: 'Benefícios'
-        },
-        {
-            title: 'Vale Alimentação',
-            description: 'Gestão de vale alimentação para funcionários',
-            url: 'beneficios/index.html',
-            category: 'Benefícios'
-        },
-        {
-            title: 'Vale Transporte',
-            description: 'Controle de vale transporte',
-            url: 'beneficios/index.html',
-            category: 'Benefícios'
-        }
-    ];
-    
-    let searchTimeout;
-    
-    searchInput.addEventListener('input', function() {
-        clearTimeout(searchTimeout);
-        const query = this.value.trim().toLowerCase();
-        
-        if (query.length < 2) {
-            hideSearchResults();
-            return;
-        }
-        
-        searchTimeout = setTimeout(() => {
-            performSearch(query, searchData, searchResults);
-        }, 300);
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
     });
     
-    // Fechar resultados ao clicar fora
-    document.addEventListener('click', function(e) {
-        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-            hideSearchResults();
-        }
-    });
-}
-
-function performSearch(query, data, resultsContainer) {
-    const results = data.filter(item => 
-        item.title.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query)
-    );
-    
-    if (results.length === 0) {
-        showNoResults(resultsContainer);
-        return;
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
     
-    displaySearchResults(results, resultsContainer);
-}
-
-function displaySearchResults(results, container) {
-    const html = results.map(result => `
-        <div class="search-result-item" onclick="navigateToResult('${result.url}')">
-            <div class="result-title">${highlightText(result.title)}</div>
-            <div class="result-description">${highlightText(result.description)}</div>
-            <div class="result-category">${result.category}</div>
-        </div>
-    `).join('');
-    
-    container.innerHTML = html;
-    container.style.display = 'block';
-}
-
-function showNoResults(container) {
-    container.innerHTML = `
-        <div class="search-no-results">
-            <i class="fas fa-search"></i>
-            <p>Nenhum resultado encontrado</p>
-        </div>
-    `;
-    container.style.display = 'block';
-}
-
-function hideSearchResults() {
-    const searchResults = document.getElementById('searchResults');
-    searchResults.style.display = 'none';
-}
-
-function highlightText(text) {
-    const query = document.getElementById('searchInput').value.trim();
-    if (!query) return text;
-    
-    const regex = new RegExp(`(${query})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
-}
-
-function navigateToResult(url) {
-    window.location.href = url;
-}
-
-// Gerenciamento da sidebar
-function initializeSidebar() {
-    // Restaurar estado dos submenus
-    const openMenus = JSON.parse(localStorage.getItem('openMenus') || '[]');
-    openMenus.forEach(menuId => {
-        const submenu = document.getElementById(menuId);
-        const button = document.querySelector(`[onclick="toggleSubmenu('${menuId}')"]`);
-        if (submenu && button) {
-            submenu.classList.add('open');
-            button.classList.add('active');
-        }
-    });
-}
-
-function toggleSubmenu(menuId) {
-    const submenu = document.getElementById(menuId);
-    const button = document.querySelector(`[onclick="toggleSubmenu('${menuId}')"]`);
-    
-    if (!submenu || !button) return;
-    
-    const isOpen = submenu.classList.contains('open');
-    
-    if (isOpen) {
-        submenu.classList.remove('open');
-        button.classList.remove('active');
-    } else {
-        submenu.classList.add('open');
-        button.classList.add('active');
-    }
-    
-    // Salvar estado
-    saveMenuState();
-}
-
-function saveMenuState() {
-    const openMenus = [];
-    document.querySelectorAll('.submenu.open').forEach(submenu => {
-        openMenus.push(submenu.id);
-    });
-    localStorage.setItem('openMenus', JSON.stringify(openMenus));
-}
-
-// Menu toggle para mobile
-function initializeMenuToggle() {
+    // Menu toggle para mobile
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
     
-    menuToggle.addEventListener('click', function() {
-        sidebarOpen = !sidebarOpen;
-        sidebar.classList.toggle('open', sidebarOpen);
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+        });
+    }
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    
+    if (searchInput && searchResults) {
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            if (query.length > 2) {
+                performSearch(query);
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
         
-        // Adicionar overlay para fechar sidebar ao clicar fora
-        if (sidebarOpen) {
-            createOverlay();
+        // Fechar resultados ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+    }
+    
+    function performSearch(query) {
+        // Dados de busca simplificados
+        const searchData = [
+            { title: 'Conciliação Bancária', url: 'financeiro/conciliacao/index.html', category: 'Financeiro' },
+            { title: 'Escala', url: 'operacional/escala/index.html', category: 'Operacional' },
+            { title: 'Cadastro de Jornada', url: 'operacional/cadastro-jornada/index.html', category: 'Operacional' },
+            { title: 'Cadastro de Clientes', url: 'operacional/clientes/index.html', category: 'Operacional' },
+            { title: 'Cadastro de Funcionários', url: 'operacional/funcionarios/index.html', category: 'Operacional' },
+            { title: 'Cadastro de Patrimônio', url: 'operacional/patrimonio/index.html', category: 'Operacional' },
+            { title: 'Serviços Complementares', url: 'operacional/servicos/index.html', category: 'Operacional' },
+            { title: 'Benefícios', url: 'beneficios/index.html', category: 'Benefícios' }
+        ];
+        
+        const results = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.category.toLowerCase().includes(query)
+        );
+        
+        displaySearchResults(results);
+    }
+    
+    function displaySearchResults(results) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div style="padding: 16px; color: #666;">Nenhum resultado encontrado</div>';
         } else {
-            removeOverlay();
+            searchResults.innerHTML = results.map(result => `
+                <div style="padding: 12px 16px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="window.location.href='${result.url}'">
+                    <div style="font-weight: 500; color: #333;">${result.title}</div>
+                    <div style="font-size: 12px; color: #666;">${result.category}</div>
+                </div>
+            `).join('');
         }
-    });
-}
+        searchResults.style.display = 'block';
+    }
+});
 
-function createOverlay() {
-    const overlay = document.createElement('div');
-    overlay.className = 'sidebar-overlay';
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 998;
-    `;
+// Função global para toggle de submenus
+function toggleSubmenu(menuId) {
+    const submenu = document.getElementById(menuId);
+    const button = submenu.previousElementSibling;
     
-    overlay.addEventListener('click', function() {
-        closeSidebar();
-    });
-    
-    document.body.appendChild(overlay);
-}
-
-function removeOverlay() {
-    const overlay = document.querySelector('.sidebar-overlay');
-    if (overlay) {
-        overlay.remove();
+    if (submenu.classList.contains('open')) {
+        submenu.classList.remove('open');
+        button.classList.remove('active');
+    } else {
+        // Fechar outros submenus
+        document.querySelectorAll('.submenu.open').forEach(menu => {
+            menu.classList.remove('open');
+            menu.previousElementSibling.classList.remove('active');
+        });
+        
+        submenu.classList.add('open');
+        button.classList.add('active');
     }
 }
-
-function closeSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.remove('open');
-    sidebarOpen = false;
-    removeOverlay();
-}
-
-// Adicionar estilos CSS dinamicamente para elementos que não estão no CSS principal
-const additionalStyles = `
-    .search-result-item {
-        padding: 12px 16px;
-        border-bottom: 1px solid var(--border-color);
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
-    
-    .search-result-item:hover {
-        background-color: var(--secondary-color);
-    }
-    
-    .search-result-item:last-child {
-        border-bottom: none;
-    }
-    
-    .result-title {
-        font-weight: 600;
-        font-size: 14px;
-        color: var(--text-primary);
-        margin-bottom: 4px;
-    }
-    
-    .result-description {
-        font-size: 12px;
-        color: var(--text-secondary);
-        margin-bottom: 4px;
-    }
-    
-    .result-category {
-        font-size: 11px;
-        color: var(--accent-color);
-        font-weight: 500;
-    }
-    
-    .search-no-results {
-        padding: 24px;
-        text-align: center;
-        color: var(--text-secondary);
-    }
-    
-    .search-no-results i {
-        font-size: 24px;
-        margin-bottom: 8px;
-        display: block;
-    }
-    
-    mark {
-        background-color: #fff3cd;
-        color: #856404;
-        padding: 0 2px;
-        border-radius: 2px;
-    }
-    
-    [data-theme="dark"] mark {
-        background-color: #664d03;
-        color: #fff3cd;
-    }
-`;
-
-// Adicionar estilos ao head
-const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet);
-
-// Função global para ser chamada pelos botões
-window.toggleSubmenu = toggleSubmenu;

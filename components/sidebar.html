@@ -1,0 +1,82 @@
+<!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2><a href="{{homePath}}index.html" style="color: white; text-decoration: none;">Módulos</a></h2>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <div class="nav-item">
+            <button class="nav-button {{operacionalActive}}" onclick="toggleSubmenu('operacional')">
+                <i class="fas fa-cogs"></i>
+                <span>Operacional</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="submenu {{operacionalOpen}}" id="operacional">
+                <a href="{{basePath}}operacional/index.html" class="submenu-item {{operacionalIndexActive}}">
+                    <i class="fas fa-chart-line"></i>
+                    Visão Geral
+                </a>
+                <a href="{{basePath}}operacional/escala/index.html" class="submenu-item {{escalaActive}}">
+                    <i class="fas fa-calendar-alt"></i>
+                    Escala
+                </a>
+                <a href="{{basePath}}operacional/cadastro-jornada/index.html" class="submenu-item {{jornadaActive}}">
+                    <i class="fas fa-clock"></i>
+                    Cadastro de Jornada
+                </a>
+                <a href="{{basePath}}operacional/clientes/index.html" class="submenu-item {{clientesActive}}">
+                    <i class="fas fa-users"></i>
+                    Cadastro de Clientes
+                </a>
+                <a href="{{basePath}}operacional/funcionarios/index.html" class="submenu-item {{funcionariosActive}}">
+                    <i class="fas fa-user-tie"></i>
+                    Cadastro de Funcionários
+                </a>
+                <a href="{{basePath}}operacional/patrimonio/index.html" class="submenu-item {{patrimonioActive}}">
+                    <i class="fas fa-boxes"></i>
+                    Cadastro de Patrimônio
+                </a>
+                <a href="{{basePath}}operacional/servicos/index.html" class="submenu-item {{servicosActive}}">
+                    <i class="fas fa-tools"></i>
+                    Serviços Complementares
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <button class="nav-button {{financeiroActive}}" onclick="toggleSubmenu('financeiro')">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Financeiro</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="submenu {{financeiroOpen}}" id="financeiro">
+                <a href="{{basePath}}financeiro/index.html" class="submenu-item {{financeiroIndexActive}}">
+                    <i class="fas fa-chart-line"></i>
+                    Visão Geral
+                </a>
+                <a href="{{basePath}}financeiro/conciliacao/index.html" class="submenu-item {{conciliacaoActive}}">
+                    <i class="fas fa-balance-scale"></i>
+                    Conciliação Bancária
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <button class="nav-button {{beneficiosActive}}" onclick="toggleSubmenu('beneficios')">
+                <i class="fas fa-gift"></i>
+                <span>Benefícios</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="submenu {{beneficiosOpen}}" id="beneficios">
+                <a href="{{basePath}}beneficios/index.html" class="submenu-item {{beneficiosIndexActive}}">
+                    <i class="fas fa-utensils"></i>
+                    Vale Alimentação
+                </a>
+                <a href="{{basePath}}beneficios/index.html" class="submenu-item">
+                    <i class="fas fa-bus"></i>
+                    Vale Transporte
+                </a>
+            </div>
+        </div>
+    </nav>
+</aside>

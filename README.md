@@ -2,64 +2,59 @@
 
 Este repositório contém o código-fonte do **Portal GesOper**, um site estático com estrutura de **documentação interna** e **base de conhecimento** sobre os módulos do sistema corporativo **GesOper**.
 
----
-
 ## ✅ Funcionalidades
 
 - 📁 Menu lateral com **módulos e submódulos organizados**
 - 🌓 Suporte a **modo claro/escuro**
 - 🔍 Campo de **busca** interno
 - 🖼️ Logotipos personalizáveis no topo (esquerda e direita)
+- 🧩 Componentes reutilizáveis (header, sidebar, footer)
 - 📦 Estrutura pronta para **deploy via GitHub Pages**
-
----
 
 ## 🧭 Estrutura de Módulos
 
 ### ▶️ Operacional
 - Escala
 - Cadastro de Jornada
+- Cadastro de Clientes
+- Cadastro de Funcionários
+- Cadastro de Patrimônio
+- Serviços Complementares
 
 ### 💰 Financeiro
-- Tesouraria
-  - Lançamento de Caixa
-  - Conciliação Bancária
-  - Relatórios
+- Conciliação Bancária
 
 ### 🎁 Benefícios
 - Geração de Vale Alimentação
 - Geração de Vale Transporte
 
----
-
-## 🗂️ Estrutura de Pastas
-
-```
 .
 ├── index.html
 ├── css/
 │   └── style.css
+├── js/
+│   └── main.js
+├── components/
+│   ├── header.html
+│   ├── sidebar.html
+│   └── footer.html
 ├── img/
 │   ├── GesoperCorporate.png
 │   └── LogoSolucao.png
 ├── operacional/
-│   ├── index.html
+│   ├── index.html (visão geral)
 │   ├── escala/index.html
-│   └── jornada/index.html
+│   ├── cadastro-jornada/index.html
+│   ├── clientes/index.html
+│   ├── funcionarios/index.html
+│   ├── patrimonio/index.html
+│   └── servicos/index.html
 ├── financeiro/
 │   ├── index.html
-│   └── tesouraria/
-│       ├── index.html
-│       ├── caixa/index.html
-│       ├── conciliacao/index.html
-│       └── relatorios/index.html
+│   └── conciliacao/index.html
 └── beneficios/
-    ├── index.html
-    ├── vale-alimentacao/index.html
-    └── vale-transporte/index.html
+    └── index.html
 ```
-
----
 
 ## 🚀 Como Publicar no GitHub Pages
 
@@ -71,16 +66,20 @@ Este repositório contém o código-fonte do **Portal GesOper**, um site estáti
 6. Seu site estará disponível em:  
    `https://<seu-usuario>.github.io/<nome-repositorio>/`
 
----
-
 ## ✏️ Customização
 
 - Para editar o conteúdo de qualquer seção, modifique o respectivo arquivo `.html`.
 - As logos estão localizadas na pasta `img/`.
 - O CSS geral pode ser ajustado em `css/style.css`.
+- Os componentes reutilizáveis estão na pasta `components/`.
 
----
+## 🔧 Otimizações Realizadas
 
+- ✅ Criação de componentes reutilizáveis (header, sidebar, footer)
+- ✅ JavaScript unificado em um único arquivo
+- ✅ Remoção de arquivos desnecessários
+- ✅ Eliminação de código duplicado
+- ✅ Estrutura mais limpa e organizada
 ## 👨‍💻 Desenvolvido por
 
 Robson Mauro, com suporte técnico gerado por inteligência artificial.  
