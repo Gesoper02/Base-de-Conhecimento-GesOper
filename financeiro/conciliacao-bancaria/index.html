@@ -56,11 +56,12 @@
       </div>
 
       <div class="content-card">
-        <h2>🏦 Sistema de Conciliação Bancária DPC</h2>
-        <p>O projeto de Conciliação Bancária da DPC (Departamento de Processamento de Contas) é uma solução robusta e automatizada para reconciliação de movimentações financeiras, garantindo precisão e eficiência no controle contábil.</p>
+        <h2>🏦 Tesouraria - Conciliação Bancária</h2>
+        <h2>Pode ser acessado pelo seguinte caminho: Gesoper>>Financeiro>>Tesouraria>>Conciliação Bancária</h2>
+        <p>A Conciliação Bancária é uma solução robusta e automatizada para reconciliação de movimentações financeiras, garantindo precisão e eficiência no controle contábil.</p>
         
         <h3>Visão Geral do Projeto</h3>
-        <p>Este sistema foi desenvolvido especificamente para atender às necessidades de conciliação bancária automatizada, proporcionando:</p>
+        <p>Toda vez que uma conta banco é movimentada através do fluxo de caixa, ela mantém um registro dentro do módulo administrativo para posterior validação junto ao arquivo de extrato (OFX) gerado a partir do banco, esse processo de validação de lançamentos chamamos de conciliação bancária. Para acessar o programa de conciliação bancária, abra o menu “Tesouraria” e em seguida “Conciliação bancária”. Inicialmente, para realizarmos a conciliação bancária, dependemos de um arquivo de conciliação bancária, este arquivo deve ser obtido através do site do banco, normalmente, o processo financeiro de conciliação bancária sempre é realizado sob o dia anterior ou sob a semana anterior. Este sistema foi desenvolvido especificamente para atender às necessidades de conciliação bancária automatizada, proporcionando:</p>
         
         <ul class="feature-list">
           <li class="feature-item">
@@ -68,63 +69,12 @@
             <small>Sistema inteligente que processa automaticamente extratos bancários e identifica correspondências com lançamentos internos.</small>
           </li>
           <li class="feature-item">
-            <strong>Reconciliação Inteligente</strong>
-            <small>Algoritmos avançados para matching automático de transações, reduzindo significativamente o trabalho manual.</small>
-          </li>
-          <li class="feature-item">
-            <strong>Gestão de Divergências</strong>
-            <small>Interface dedicada para análise e resolução de divergências identificadas durante o processo de conciliação.</small>
-          </li>
-          <li class="feature-item">
             <strong>Relatórios Gerenciais</strong>
-            <small>Dashboards e relatórios detalhados para acompanhamento do processo e tomada de decisões estratégicas.</small>
+            <small>Relatórios detalhados para acompanhamento do processo e tomada de decisões estratégicas.</small>
           </li>
-          <li class="feature-item">
-            <strong>Auditoria Completa</strong>
-            <small>Trilha de auditoria completa de todas as operações realizadas no sistema, garantindo transparência e conformidade.</small>
-          </li>
-        </ul>
+       </ul>
       </div>
-
-      <div class="content-card">
-        <h2>Arquitetura do Sistema</h2>
-        
-        <h3>Componentes Principais</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-          <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #003973;">
-            <h4 style="color: #003973; margin-bottom: 1rem; display: flex; align-items: center;">
-              <span style="background: #003973; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">1</span>
-              Módulo de Importação
-            </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Responsável pela importação e validação de extratos bancários em diversos formatos (OFX, CSV, TXT).</p>
-          </div>
-          
-          <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #28a745;">
-            <h4 style="color: #28a745; margin-bottom: 1rem; display: flex; align-items: center;">
-              <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">2</span>
-              Engine de Conciliação
-            </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Núcleo do sistema que executa os algoritmos de matching e identificação de correspondências.</p>
-          </div>
-          
-          <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffc107;">
-            <h4 style="color: #ffc107; margin-bottom: 1rem; display: flex; align-items: center;">
-              <span style="background: #ffc107; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">3</span>
-              Interface de Gestão
-            </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Interface web intuitiva para configuração, monitoramento e resolução manual de divergências.</p>
-          </div>
-          
-          <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #dc3545;">
-            <h4 style="color: #dc3545; margin-bottom: 1rem; display: flex; align-items: center;">
-              <span style="background: #dc3545; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">4</span>
-              Módulo de Relatórios
-            </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Geração de relatórios gerenciais, dashboards e exportação de dados para análise.</p>
-          </div>
-        </div>
-      </div>
-
+      
       <div class="content-card">
         <h2>Fluxo de Processamento</h2>
         
@@ -133,31 +83,23 @@
             <div style="background: #003973; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">1</div>
             <div>
               <strong>Importação de Extratos</strong>
-              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">O sistema importa automaticamente os extratos bancários dos principais bancos brasileiros.</p>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">O primeiro passo é definir a data, nos campos Data inicial e Data final em que iremos realizar a conciliação, obter junto ao banco o arquivo OFX dentro do período onde iremos realizar a conciliação bancária, clicar no botão “Importar OFX” e depois clicar no botão “Pesquisar”.</p>
             </div>
           </div>
           
           <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
             <div style="background: #28a745; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">2</div>
             <div>
-              <strong>Validação e Normalização</strong>
-              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Os dados são validados e normalizados para garantir consistência no processamento.</p>
+              <strong>Validação e Visualização - Lado Esquerdo Extrato Bancário</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">No lado esquerdo, Extrato Bancário é exibido as informações das operações que foram importadas via arquivo OFX e no lado direito, Gesoper ADM os lançamentos realizados no fluxo de caixa para a conta selecionada para poder conciliar. No lado esquerdo ainda, é possível selecionar todos ou alguns registros e se for preciso, excluir estes lançamentos, através do botão “Excluir Lançamento” para poder por exemplo, importar novamente o arquivo ofx. Existe também a possibilidade, de lançar um estorno através do botão “Estornar Selecionados” e desfazer este lançamento, botão “Desfazer Estorno” estas duas opções são usadas em casos específicos, onde o banco lança algum registro indevido e não faz automaticamente o lançamento deste estorno no extrato bancário. Existe ainda na tela, alguns campos de filtro que podem ser usados, “Ocultar Conciliados”, caso marcado, não mostra em tela os registros que já foram conciliados para poder agilizar o processo da conciliação. O campo “Tipo”, pode ser usado para que o sistema filtre determinadas operações, “Débito”, “Crédito” e “Todos”, conforme a opção selecionada, será mostrada os registros nos dois lados, “Extrato Bancário” e “Gesoper ADM” para que possa ser visualizado e realizado a conferência das informações na tela. O campo Valor, permite que seja filtrado somente um valor específico que o usuário precisando visualizar em tela.</p>
             </div>
           </div>
-          
-          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
-            <div style="background: #ffc107; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">3</div>
-            <div>
-              <strong>Matching Automático</strong>
-              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Algoritmos inteligentes identificam correspondências entre extratos e lançamentos contábeis.</p>
-            </div>
-          </div>
-          
+                           
           <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #dc3545;">
             <div style="background: #dc3545; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">4</div>
             <div>
-              <strong>Análise de Divergências</strong>
-              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Itens não conciliados são apresentados para análise e resolução manual.</p>
+              <strong>Validação e Visualização - Lado Direito Gesoper ADM</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">No lado direito, “Gesoper ADM”, é possível fazer várias ações, que afetam diretamente no processo de conciliação. O botão “Marcar Iguais” serve para marcar somente os registros que possuem informações idênticas, como valor e data, esta marcação é feita nas duas telas e deve ser usada somente quando tiver as informações nos dois lados da tela. Após realizar a ação de marcação dos registros iguais, pode ser usado o botão “Conciliar Selecinados” para poder efetivar a conciliação destes registros selecionados. O botão “Ajustar Conciliação” permite que você corrija erros de centavos, ou seja, pequenos valores para efetivar a conciliação, por exemplo, você lança uma conta a receber de 11.500,49 e o banco lhe credita 11.500,48; nestes casos, usamos o botão ajustar conciliação. O botão “Marcar Conciliados” e o “Desmarcar Conciliados” respectivamente, marca e desmarca, na tela todos os registros que foram conciliados, para que possa agilizar o processo de gestão das infomações mostradas. O botão ”Detalhar” faz com que o sistema, mostre em detalhes o lançamento que foi feito no Lançamento de Caixa, conforme lançamento que foi selecionado para executar este ação. O botão “Gerar Lançamento” é utilizado quando temos o débito no banco e não temos o lançamento do mesmo nas contas a pagar, isso é muito comum de ocorrer nas tarifas bancárias e outros débitos de baixo valor originados pelo banco, como, por exemplo, juros de saldo negativo/positivo, lançamento de tarifas bancárias, extrato, mensalidade de conta, resgate de aplicação. Nesses casos, utilizamos o botão gerar lançamentos para realizar um movimento de caixa e contabilizar esse valor na sua respectiva conta.</p>
             </div>
           </div>
           
@@ -165,46 +107,18 @@
             <div style="background: #6f42c1; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">5</div>
             <div>
               <strong>Geração de Relatórios</strong>
-              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Relatórios detalhados são gerados para acompanhamento e auditoria do processo.</p>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Para gerar o relatório para conferência é o botão “Listar”, nele o sistema gera uma relatório para que possa ser analisado os registro que foram conciliados ou não, depenendo do filtro que for usado, Tudo, Não Conciliados ou Conciliados.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="content-card">
-        <h2>Funcionalidades Técnicas</h2>
-        
-        <h3>Algoritmos de Matching</h3>
-        <p>O sistema utiliza múltiplos algoritmos para identificação de correspondências:</p>
-        
-        <div class="feature-list">
-          <div class="feature-item">
-            <strong>🔍 Matching Exato</strong>
-            <small>Correspondência perfeita por valor, data e histórico da transação.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>📊 Matching Fuzzy</strong>
-            <small>Algoritmos de similaridade para identificar correspondências aproximadas com base em critérios configuráveis.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>🎯 Matching por Regras</strong>
-            <small>Sistema de regras customizáveis para diferentes tipos de transações e cenários específicos.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>🔄 Matching Múltiplo</strong>
-            <small>Capacidade de conciliar uma transação bancária com múltiplos lançamentos contábeis e vice-versa.</small>
-          </div>
-        </div>
-
+     
         <h3>Tratamento de Divergências</h3>
         <p>O sistema categoriza e trata diferentes tipos de divergências:</p>
         
         <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Diferenças de Valor:</strong> Transações com valores divergentes devido a taxas, IOF ou erros</li>
-          <li><strong>Diferenças de Data:</strong> Lançamentos com datas diferentes entre banco e contabilidade</li>
+          <li><strong>Diferenças de Valor:</strong> Transações com valores divergentes</li>
+          <li><strong>Diferenças de Data:</strong> Lançamentos com datas diferentes entre banco e o lançamento de caixa efetuado</li>
           <li><strong>Lançamentos Órfãos:</strong> Movimentações sem correspondência no sistema oposto</li>
           <li><strong>Duplicações:</strong> Identificação e tratamento de lançamentos duplicados</li>
           <li><strong>Estornos:</strong> Reconhecimento automático de estornos e suas contrapartidas</li>
@@ -232,112 +146,19 @@
             <h4 style="color: #f57c00; margin-bottom: 0.5rem;">Controle Total</h4>
             <p style="font-size: 0.9rem; margin: 0;">Visibilidade completa sobre todas as movimentações financeiras.</p>
           </div>
-          
-          <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
-            <h4 style="color: #c2185b; margin-bottom: 0.5rem;">Conformidade</h4>
-            <p style="font-size: 0.9rem; margin: 0;">Atendimento às normas contábeis e requisitos de auditoria.</p>
-          </div>
+              
         </div>
       </div>
 
-      <div class="content-card">
-        <h2>Especificações Técnicas</h2>
-        
-        <h3>Requisitos do Sistema</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1rem 0;">
-          <div>
-            <h4>Infraestrutura Mínima</h4>
-            <ul style="padding-left: 1.5rem;">
-              <li>Servidor com 8GB RAM</li>
-              <li>100GB de espaço em disco</li>
-              <li>Processador quad-core</li>
-              <li>Conexão de internet estável</li>
-              <li>Banco de dados SQL Server/Oracle</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4>Tecnologias Utilizadas</h4>
-            <ul style="padding-left: 1.5rem;">
-              <li>Framework .NET Core</li>
-              <li>Interface web responsiva</li>
-              <li>APIs REST para integração</li>
-              <li>Processamento em lote otimizado</li>
-              <li>Criptografia de dados sensíveis</li>
-            </ul>
-          </div>
-        </div>
-
+     
         <h3>Formatos Suportados</h3>
         <p>O sistema suporta importação de extratos nos seguintes formatos:</p>
         <ul style="margin: 1rem 0; padding-left: 1.5rem;">
           <li><strong>OFX (Open Financial Exchange):</strong> Formato padrão para intercâmbio de dados financeiros</li>
-          <li><strong>CSV (Comma Separated Values):</strong> Arquivos de texto com dados separados por vírgula</li>
-          <li><strong>TXT:</strong> Arquivos de texto com layout fixo ou delimitado</li>
-          <li><strong>XML:</strong> Arquivos estruturados em formato XML</li>
-          <li><strong>APIs Bancárias:</strong> Integração direta com APIs dos principais bancos</li>
-        </ul>
+         </ul>
       </div>
-
-      <div class="content-card">
-        <h2>Implementação e Configuração</h2>
-        
-        <h3>Processo de Implementação</h3>
-        <ol style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Análise de Requisitos:</strong> Levantamento detalhado das necessidades específicas da organização</li>
-          <li><strong>Configuração Inicial:</strong> Setup do ambiente, banco de dados e parâmetros básicos</li>
-          <li><strong>Mapeamento de Contas:</strong> Configuração do plano de contas e relacionamento com contas bancárias</li>
-          <li><strong>Definição de Regras:</strong> Criação de regras de matching específicas para cada tipo de transação</li>
-          <li><strong>Testes e Validação:</strong> Execução de testes com dados reais para validação do sistema</li>
-          <li><strong>Treinamento:</strong> Capacitação da equipe nas funcionalidades e operação do sistema</li>
-          <li><strong>Go-Live:</strong> Entrada em produção com acompanhamento especializado</li>
-        </ol>
-
-        <h3>Configurações Avançadas</h3>
-        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Tolerâncias de Matching:</strong> Definição de margens aceitáveis para diferenças de valor e data</li>
-          <li><strong>Regras de Negócio:</strong> Configuração de regras específicas por tipo de transação</li>
-          <li><strong>Workflows de Aprovação:</strong> Definição de fluxos de aprovação para divergências</li>
-          <li><strong>Alertas Automáticos:</strong> Configuração de notificações para situações específicas</li>
-          <li><strong>Integração com ERP:</strong> Conexão com sistemas de gestão empresarial</li>
-        </ul>
-      </div>
-
-      <div class="content-card">
-        <h2>Suporte e Manutenção</h2>
-        
-        <h3>Níveis de Suporte</h3>
-        <div class="feature-list">
-          <div class="feature-item">
-            <strong>🔧 Suporte Técnico</strong>
-            <small>Atendimento especializado para questões técnicas e operacionais do sistema.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>📚 Documentação</strong>
-            <small>Manual completo do usuário, guias de configuração e documentação técnica.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>🎓 Treinamento</strong>
-            <small>Programas de capacitação para usuários finais e administradores do sistema.</small>
-          </div>
-          
-          <div class="feature-item">
-            <strong>🔄 Atualizações</strong>
-            <small>Atualizações regulares com melhorias, correções e novas funcionalidades.</small>
-          </div>
-        </div>
-
-        <div style="background-color: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-          <strong>💡 Importante:</strong> O sistema DPC de Conciliação Bancária é uma solução enterprise que requer implementação e configuração especializada. Entre em contato com nossa equipe técnica para mais informações sobre licenciamento e implementação.
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <footer>
+      
+   <footer>
     <p>&copy; 2025 GesOper - Todos os direitos reservados</p>
   </footer>
 
