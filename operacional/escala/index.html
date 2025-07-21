@@ -1,53 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Escala - GesOper</title>
-    <style>
-        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
-        .main-wrapper { flex: 1; display: flex; }
-        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
-        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
-        .submenu { display: none; margin-left: 10px; }
-        .content { flex: 1; padding: 20px; }
-        .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
-        a { text-decoration: none; color: white; }
-    </style>
-    <script>
-        function toggleSubmenu(id) {
-            const el = document.getElementById(id);
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <title>Escala</title>
+  <style>
+    body { display: flex; margin: 0; font-family: Arial, sans-serif; }
+    .sidebar { width: 220px; background: #003366; color: white; height: 100vh; padding: 20px; }
+    .sidebar-header img { width: 180px; margin-bottom: 30px; }
+    .sidebar a { display: block; color: white; text-decoration: none; margin: 10px 0; }
+    .main { flex: 1; padding: 40px; }
+  </style>
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="sidebar">
-            <h2><a href="../../index.html" style="color: white; text-decoration: none;">GesOper</a></h2>
-            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
-            <div id="submenu-operacional" class="submenu">
-                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
-                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
-            </div>
-            <button onclick="toggleSubmenu('submenu-financeiro')">Financeiro</button>
-            <div id="submenu-financeiro" class="submenu">
-                <a href="../../financeiro/index.html">↪ Visão Geral</a><br>
-                <a href="../../financeiro/conciliacao-bancaria/index.html">↪ Conciliação Bancária</a>
-            </div>
-            <button><a href="../../beneficios/index.html">Benefícios</a></button>
-        </div>
-        <div class="content">
-            <div class="topbar">
-                <h1>Escala</h1>
-            </div>
-            <p>Submódulo de controle de escalas.</p>
-        </div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <a href="/Base-de-Conhecimento-GesOper/index.html">
+        <img src="/Base-de-Conhecimento-GesOper/assets/img/logo-gesoper.png" alt="GesOper Logo">
+      </a>
     </div>
-    <footer>
-        @ 2025 - Gesoper
-    </footer>
+    <a href="/Base-de-Conhecimento-GesOper/operacional/escala/index.html">Operacional</a>
+    <a href="/Base-de-Conhecimento-GesOper/financeiro/visao-geral/index.html">Financeiro</a>
+    <a href="#">Benefícios</a>
+  </div>
+  <div class="main">
+    <h1>Escala</h1>
+    <p>Submódulo relacionado a escala.</p>
+  </div>
 </body>
 </html>
