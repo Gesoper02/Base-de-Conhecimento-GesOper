@@ -1,64 +1,175 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Financeiro - GesOper</title>
-    <style>
-        body { display: flex; margin: 0; font-family: sans-serif; flex-direction: column; min-height: 100vh; }
-        .main-wrapper { flex: 1; display: flex; }
-        .sidebar { width: 250px; background-color: #003973; color: white; padding: 10px; }
-        .sidebar h2, .sidebar button { color: white; text-align: left; background: none; border: none; padding: 8px; width: 100%; cursor: pointer; }
-        .submenu { display: none; margin-left: 10px; }
-        .content { flex: 1; padding: 20px; }
-        .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        footer { background-color: #003973; color: white; text-align: center; padding: 10px; }
-        a { text-decoration: none; color: white; }
-    </style>
-    <script>
-        function toggleSubmenu(id) {
-            const el = document.getElementById(id);
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financeiro - GesOper</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="sidebar">
-            <h2><a href="../../index.html"><img src="GesoperCorporate.png" class="img-fluid rounded"></a></h2>
-            <button onclick="toggleSubmenu('submenu-operacional')">Operacional</button>
-            <div id="submenu-operacional" class="submenu">
-                <a href="../../operacional/escala/index.html">↪ Escala</a><br>
-                <a href="../../operacional/cadastro-jornada/index.html">↪ Cadastro de Jornada</a>
-            </div>
-            <button onclick="toggleSubmenu('submenu-financeiro')">Financeiro</button>
-            <div id="submenu-financeiro" class="submenu" style="display: block;">
-                <a href="../../financeiro/index.html">↪ Visão Geral</a><br>
-                <a href="../../financeiro/conciliacao-bancaria/index.html">↪ Conciliação Bancária</a>
-            </div>
-            <button><a href="../../beneficios/index.html">Benefícios</a></button>
+  <div class="main-wrapper">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2><a href="../index.html">GesOper</a></h2>
+        <div class="subtitle">Base de Conhecimento</div>
+      </div>
+      
+      <div class="menu-item">
+        <button class="menu-button" data-submenu="submenu-operacional">
+          <span><span class="icon">⚙️</span>Operacional</span>
+          <span class="arrow">▶</span>
+        </button>
+        <div id="submenu-operacional" class="submenu">
+          <a href="../operacional/escala/index.html">📅 Escala</a>
+          <a href="../operacional/cadastro-jornada/index.html">⏰ Cadastro de Jornada</a>
         </div>
-        <div class="content">
-            <div class="topbar">
-                <h1>Financeiro</h1>
-            </div>
-            <div style="margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-                <h2 style="color: #003973; margin-top: 0;">Módulo Financeiro</h2>
-                <p>O módulo financeiro do GesOper oferece ferramentas completas para gestão e controle das finanças da empresa.</p>
-                
-                <h3>Funcionalidades Disponíveis:</h3>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
-                        <strong><a href="conciliacao-bancaria/index.html" style="color: #003973;">Conciliação Bancária</a></strong><br>
-                        <small>Controle e acompanhamento das movimentações financeiras com conciliação automática de extratos bancários.</small>
-                    </li>
-                </ul>
-            </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-button active" data-submenu="submenu-financeiro">
+          <span><span class="icon">💰</span>Financeiro</span>
+          <span class="arrow rotated">▶</span>
+        </button>
+        <div id="submenu-financeiro" class="submenu show">
+          <a href="index.html" class="active">📊 Visão Geral</a>
+          <a href="conciliacao-bancaria/index.html">🏦 Conciliação Bancária</a>
         </div>
-    </div>
-    <footer>
-        @ 2025 - Gesoper
-    </footer>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-button">
+          <a href="../beneficios/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; width: 100%;">
+            <span class="icon">🎁</span>Benefícios
+          </a>
+        </button>
+      </div>
+    </nav>
+
+    <main class="content">
+      <div class="topbar">
+        <h1>Módulo Financeiro</h1>
+        <div class="breadcrumb">
+          <a href="../index.html">Início</a> > Financeiro
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>💰 Gestão Financeira Completa</h2>
+        <p>O módulo financeiro do GesOper oferece ferramentas abrangentes para o controle e gestão das finanças empresariais, proporcionando visibilidade total sobre a saúde financeira da organização.</p>
+        
+        <h3>Principais Recursos</h3>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong>Dashboard Financeiro</strong>
+            <small>Visão consolidada de receitas, despesas, fluxo de caixa e indicadores financeiros em tempo real com gráficos interativos.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Controle de Contas a Pagar</strong>
+            <small>Gestão completa de fornecedores, vencimentos, pagamentos e histórico de transações com alertas automáticos.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Contas a Receber</strong>
+            <small>Acompanhamento de clientes, faturas em aberto, recebimentos e análise de inadimplência com relatórios detalhados.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Fluxo de Caixa</strong>
+            <small>Projeções financeiras, controle de entrada e saída de recursos com análise preditiva para tomada de decisões.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Relatórios Gerenciais</strong>
+            <small>Relatórios customizáveis de DRE, balanço patrimonial, análise de custos e indicadores de performance financeira.</small>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2>Funcionalidades Disponíveis</h2>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong><a href="conciliacao-bancaria/index.html">🏦 Conciliação Bancária</a></strong>
+            <small>
+              Sistema automatizado de conciliação que compara os registros internos com extratos bancários, 
+              identificando divergências e facilitando o fechamento contábil mensal. Suporte para múltiplas 
+              contas bancárias e integração com principais bancos brasileiros.
+            </small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>📈 Centro de Custos</strong>
+            <small>
+              Organize e controle os gastos por departamento, projeto ou atividade específica. 
+              Análise detalhada de rentabilidade e identificação de oportunidades de otimização de custos.
+            </small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>💳 Gestão de Cartões Corporativos</strong>
+            <small>
+              Controle total sobre cartões de crédito empresariais, com categorização automática de despesas, 
+              limites por usuário e relatórios de utilização para melhor governança financeira.
+            </small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>📊 Business Intelligence</strong>
+            <small>
+              Dashboards interativos com KPIs financeiros, análise de tendências, comparativos históricos 
+              e projeções que auxiliam na tomada de decisões estratégicas.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>Benefícios do Módulo Financeiro</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #003973;">
+            <h4 style="color: #003973; margin-bottom: 0.5rem;">⚡ Automação</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Reduza tarefas manuais com processos automatizados de conciliação, categorização e relatórios.</p>
+          </div>
+          
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745;">
+            <h4 style="color: #28a745; margin-bottom: 0.5rem;">📊 Visibilidade</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Tenha visão completa da situação financeira com dashboards em tempo real e relatórios detalhados.</p>
+          </div>
+          
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffc107;">
+            <h4 style="color: #ffc107; margin-bottom: 0.5rem;">🎯 Controle</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Mantenha controle rigoroso sobre receitas, despesas e fluxo de caixa com alertas inteligentes.</p>
+          </div>
+          
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #dc3545;">
+            <h4 style="color: #dc3545; margin-bottom: 0.5rem;">🔒 Segurança</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Proteja informações financeiras sensíveis com criptografia e controles de acesso avançados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>Primeiros Passos</h2>
+        <p>Para começar a usar o módulo financeiro:</p>
+        
+        <ol style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><strong>Configuração Inicial:</strong> Configure as contas bancárias, centros de custo e categorias de despesas</li>
+          <li><strong>Importação de Dados:</strong> Importe extratos bancários e dados históricos para começar a conciliação</li>
+          <li><strong>Definir Regras:</strong> Configure regras automáticas de categorização e alertas personalizados</li>
+          <li><strong>Treinamento:</strong> Capacite a equipe nas funcionalidades principais do sistema</li>
+          <li><strong>Monitoramento:</strong> Acompanhe os indicadores através dos dashboards e relatórios</li>
+        </ol>
+
+        <div style="background-color: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+          <strong>💡 Dica:</strong> Comece pela conciliação bancária para ter uma base sólida antes de explorar outras funcionalidades do módulo financeiro.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GesOper - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="../assets/js/navigation.js"></script>
 </body>
 </html>
