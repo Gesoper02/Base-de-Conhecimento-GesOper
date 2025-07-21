@@ -47,7 +47,7 @@
 
     <main class="content">
       <div class="topbar">
-        <h1>Conciliação Bancária</h1>
+        <h1>Conciliação Bancária DPC</h1>
         <div class="breadcrumb">
           <a href="../../index.html">Início</a> > 
           <a href="../index.html">Financeiro</a> > 
@@ -56,166 +56,283 @@
       </div>
 
       <div class="content-card">
-        <h2>🏦 Conciliação Bancária Automatizada</h2>
-        <p>A conciliação bancária é um processo fundamental para garantir a precisão dos registros financeiros. O GesOper automatiza este processo, comparando os lançamentos internos com os extratos bancários e identificando divergências de forma inteligente.</p>
+        <h2>🏦 Sistema de Conciliação Bancária DPC</h2>
+        <p>O projeto de Conciliação Bancária da DPC (Departamento de Processamento de Contas) é uma solução robusta e automatizada para reconciliação de movimentações financeiras, garantindo precisão e eficiência no controle contábil.</p>
         
-        <h3>Principais Funcionalidades</h3>
+        <h3>Visão Geral do Projeto</h3>
+        <p>Este sistema foi desenvolvido especificamente para atender às necessidades de conciliação bancária automatizada, proporcionando:</p>
+        
         <ul class="feature-list">
           <li class="feature-item">
-            <strong>Importação Automática de Extratos</strong>
-            <small>Conecte-se diretamente com os principais bancos brasileiros para importação automática de extratos em formato OFX, CSV ou através de APIs bancárias.</small>
+            <strong>Processamento Automatizado</strong>
+            <small>Sistema inteligente que processa automaticamente extratos bancários e identifica correspondências com lançamentos internos.</small>
           </li>
           <li class="feature-item">
-            <strong>Matching Inteligente</strong>
-            <small>Algoritmo avançado que identifica automaticamente correspondências entre lançamentos internos e movimentações bancárias, considerando valores, datas e históricos.</small>
+            <strong>Reconciliação Inteligente</strong>
+            <small>Algoritmos avançados para matching automático de transações, reduzindo significativamente o trabalho manual.</small>
           </li>
           <li class="feature-item">
             <strong>Gestão de Divergências</strong>
-            <small>Interface intuitiva para análise e resolução de divergências, com sugestões automáticas e histórico de ajustes realizados.</small>
+            <small>Interface dedicada para análise e resolução de divergências identificadas durante o processo de conciliação.</small>
           </li>
           <li class="feature-item">
-            <strong>Múltiplas Contas</strong>
-            <small>Gerencie a conciliação de múltiplas contas bancárias simultaneamente, com visão consolidada e individual de cada conta.</small>
+            <strong>Relatórios Gerenciais</strong>
+            <small>Dashboards e relatórios detalhados para acompanhamento do processo e tomada de decisões estratégicas.</small>
           </li>
           <li class="feature-item">
-            <strong>Relatórios de Conciliação</strong>
-            <small>Relatórios detalhados do processo de conciliação, incluindo itens conciliados, pendentes e divergências identificadas.</small>
+            <strong>Auditoria Completa</strong>
+            <small>Trilha de auditoria completa de todas as operações realizadas no sistema, garantindo transparência e conformidade.</small>
           </li>
         </ul>
       </div>
 
       <div class="content-card">
-        <h2>Como Funciona o Processo</h2>
+        <h2>Arquitetura do Sistema</h2>
         
+        <h3>Componentes Principais</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
           <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #003973;">
             <h4 style="color: #003973; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="background: #003973; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">1</span>
-              Importação
+              Módulo de Importação
             </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Extratos bancários são importados automaticamente ou manualmente através de arquivos OFX/CSV.</p>
+            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Responsável pela importação e validação de extratos bancários em diversos formatos (OFX, CSV, TXT).</p>
           </div>
           
           <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #28a745;">
             <h4 style="color: #28a745; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">2</span>
-              Análise
+              Engine de Conciliação
             </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Sistema compara automaticamente os lançamentos internos com as movimentações bancárias.</p>
+            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Núcleo do sistema que executa os algoritmos de matching e identificação de correspondências.</p>
           </div>
           
           <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffc107;">
             <h4 style="color: #ffc107; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="background: #ffc107; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">3</span>
-              Matching
+              Interface de Gestão
             </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Correspondências são identificadas automaticamente com base em critérios configuráveis.</p>
+            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Interface web intuitiva para configuração, monitoramento e resolução manual de divergências.</p>
           </div>
           
           <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #dc3545;">
             <h4 style="color: #dc3545; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="background: #dc3545; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">4</span>
-              Revisão
+              Módulo de Relatórios
             </h4>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Divergências são apresentadas para análise manual e resolução pelo usuário.</p>
+            <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Geração de relatórios gerenciais, dashboards e exportação de dados para análise.</p>
           </div>
         </div>
       </div>
 
       <div class="content-card">
-        <h2>Configuração e Uso</h2>
+        <h2>Fluxo de Processamento</h2>
         
-        <h3>1. Configuração Inicial</h3>
-        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Cadastro de Contas:</strong> Registre todas as contas bancárias da empresa</li>
-          <li><strong>Configuração de APIs:</strong> Configure conexões com bancos que oferecem integração</li>
-          <li><strong>Regras de Matching:</strong> Defina critérios para identificação automática de correspondências</li>
-          <li><strong>Categorização:</strong> Configure categorias para classificação automática de transações</li>
-        </ul>
-
-        <h3>2. Processo Diário</h3>
-        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Importação:</strong> Importe extratos bancários (manual ou automática)</li>
-          <li><strong>Revisão:</strong> Analise as correspondências sugeridas pelo sistema</li>
-          <li><strong>Ajustes:</strong> Resolva divergências e itens não conciliados</li>
-          <li><strong>Aprovação:</strong> Confirme a conciliação após revisão completa</li>
-        </ul>
-
-        <h3>3. Monitoramento</h3>
-        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-          <li><strong>Dashboard:</strong> Acompanhe o status da conciliação em tempo real</li>
-          <li><strong>Alertas:</strong> Receba notificações sobre divergências importantes</li>
-          <li><strong>Relatórios:</strong> Gere relatórios periódicos de conciliação</li>
-          <li><strong>Auditoria:</strong> Mantenha trilha de auditoria de todos os ajustes</li>
-        </ul>
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #003973;">
+            <div style="background: #003973; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">1</div>
+            <div>
+              <strong>Importação de Extratos</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">O sistema importa automaticamente os extratos bancários dos principais bancos brasileiros.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
+            <div style="background: #28a745; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">2</div>
+            <div>
+              <strong>Validação e Normalização</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Os dados são validados e normalizados para garantir consistência no processamento.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
+            <div style="background: #ffc107; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">3</div>
+            <div>
+              <strong>Matching Automático</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Algoritmos inteligentes identificam correspondências entre extratos e lançamentos contábeis.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #dc3545;">
+            <div style="background: #dc3545; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">4</div>
+            <div>
+              <strong>Análise de Divergências</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Itens não conciliados são apresentados para análise e resolução manual.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #6f42c1;">
+            <div style="background: #6f42c1; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">5</div>
+            <div>
+              <strong>Geração de Relatórios</strong>
+              <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: #666;">Relatórios detalhados são gerados para acompanhamento e auditoria do processo.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="content-card">
-        <h2>Tipos de Divergências Comuns</h2>
+        <h2>Funcionalidades Técnicas</h2>
+        
+        <h3>Algoritmos de Matching</h3>
+        <p>O sistema utiliza múltiplos algoritmos para identificação de correspondências:</p>
         
         <div class="feature-list">
           <div class="feature-item">
-            <strong>🔍 Lançamentos Não Identificados</strong>
-            <small>Movimentações bancárias que não possuem correspondência nos registros internos, como taxas bancárias não previstas ou depósitos não identificados.</small>
+            <strong>🔍 Matching Exato</strong>
+            <small>Correspondência perfeita por valor, data e histórico da transação.</small>
           </div>
           
           <div class="feature-item">
-            <strong>📅 Diferenças de Data</strong>
-            <small>Transações com datas diferentes entre o registro interno e o extrato bancário, comum em transferências e compensação de cheques.</small>
+            <strong>📊 Matching Fuzzy</strong>
+            <small>Algoritmos de similaridade para identificar correspondências aproximadas com base em critérios configuráveis.</small>
           </div>
           
           <div class="feature-item">
-            <strong>💰 Diferenças de Valor</strong>
-            <small>Divergências nos valores devido a taxas, IOF, descontos ou erros de digitação que precisam ser investigados e corrigidos.</small>
+            <strong>🎯 Matching por Regras</strong>
+            <small>Sistema de regras customizáveis para diferentes tipos de transações e cenários específicos.</small>
           </div>
           
           <div class="feature-item">
-            <strong>🔄 Duplicações</strong>
-            <small>Lançamentos duplicados no sistema interno ou múltiplas movimentações bancárias para uma única transação.</small>
+            <strong>🔄 Matching Múltiplo</strong>
+            <small>Capacidade de conciliar uma transação bancária com múltiplos lançamentos contábeis e vice-versa.</small>
           </div>
         </div>
+
+        <h3>Tratamento de Divergências</h3>
+        <p>O sistema categoriza e trata diferentes tipos de divergências:</p>
+        
+        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><strong>Diferenças de Valor:</strong> Transações com valores divergentes devido a taxas, IOF ou erros</li>
+          <li><strong>Diferenças de Data:</strong> Lançamentos com datas diferentes entre banco e contabilidade</li>
+          <li><strong>Lançamentos Órfãos:</strong> Movimentações sem correspondência no sistema oposto</li>
+          <li><strong>Duplicações:</strong> Identificação e tratamento de lançamentos duplicados</li>
+          <li><strong>Estornos:</strong> Reconhecimento automático de estornos e suas contrapartidas</li>
+        </ul>
       </div>
 
       <div class="content-card">
-        <h2>Benefícios da Conciliação Automatizada</h2>
+        <h2>Benefícios Operacionais</h2>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-          <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏱️</div>
-            <h4 style="color: #003973; margin-bottom: 0.5rem;">Economia de Tempo</h4>
-            <p style="font-size: 0.9rem; margin: 0;">Reduza o tempo de conciliação de horas para minutos com automação inteligente.</p>
+          <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 12px;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+            <h4 style="color: #1976d2; margin-bottom: 0.5rem;">Redução de Tempo</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Automatização reduz o tempo de conciliação de dias para horas.</p>
           </div>
           
-          <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
-            <h4 style="color: #003973; margin-bottom: 0.5rem;">Maior Precisão</h4>
-            <p style="font-size: 0.9rem; margin: 0;">Elimine erros humanos com matching automático e validações inteligentes.</p>
+          <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 12px;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+            <h4 style="color: #388e3c; margin-bottom: 0.5rem;">Maior Precisão</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Eliminação de erros humanos através de processos automatizados.</p>
           </div>
           
-          <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-            <h4 style="color: #003973; margin-bottom: 0.5rem;">Controle Total</h4>
-            <p style="font-size: 0.9rem; margin: 0;">Tenha visibilidade completa sobre todas as movimentações financeiras.</p>
+          <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%); border-radius: 12px;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
+            <h4 style="color: #f57c00; margin-bottom: 0.5rem;">Controle Total</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Visibilidade completa sobre todas as movimentações financeiras.</p>
           </div>
           
-          <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
-            <h4 style="color: #003973; margin-bottom: 0.5rem;">Conformidade</h4>
-            <p style="font-size: 0.9rem; margin: 0;">Mantenha registros auditáveis e em conformidade com normas contábeis.</p>
+          <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); border-radius: 12px;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
+            <h4 style="color: #c2185b; margin-bottom: 0.5rem;">Conformidade</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Atendimento às normas contábeis e requisitos de auditoria.</p>
           </div>
         </div>
       </div>
 
       <div class="content-card">
-        <h2>Dicas para Otimizar a Conciliação</h2>
-        <ul style="padding-left: 1.5rem;">
-          <li><strong>Frequência Regular:</strong> Realize conciliações diariamente para evitar acúmulo de divergências</li>
-          <li><strong>Padronização:</strong> Mantenha padrões consistentes nos históricos de lançamentos</li>
-          <li><strong>Categorização:</strong> Use categorias bem definidas para facilitar a identificação automática</li>
-          <li><strong>Treinamento:</strong> Capacite a equipe para identificar e resolver divergências rapidamente</li>
-          <li><strong>Backup:</strong> Mantenha backups dos extratos importados para auditoria</li>
-          <li><strong>Revisão:</strong> Estabeleça rotinas de revisão e aprovação dos processos de conciliação</li>
+        <h2>Especificações Técnicas</h2>
+        
+        <h3>Requisitos do Sistema</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1rem 0;">
+          <div>
+            <h4>Infraestrutura Mínima</h4>
+            <ul style="padding-left: 1.5rem;">
+              <li>Servidor com 8GB RAM</li>
+              <li>100GB de espaço em disco</li>
+              <li>Processador quad-core</li>
+              <li>Conexão de internet estável</li>
+              <li>Banco de dados SQL Server/Oracle</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4>Tecnologias Utilizadas</h4>
+            <ul style="padding-left: 1.5rem;">
+              <li>Framework .NET Core</li>
+              <li>Interface web responsiva</li>
+              <li>APIs REST para integração</li>
+              <li>Processamento em lote otimizado</li>
+              <li>Criptografia de dados sensíveis</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Formatos Suportados</h3>
+        <p>O sistema suporta importação de extratos nos seguintes formatos:</p>
+        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><strong>OFX (Open Financial Exchange):</strong> Formato padrão para intercâmbio de dados financeiros</li>
+          <li><strong>CSV (Comma Separated Values):</strong> Arquivos de texto com dados separados por vírgula</li>
+          <li><strong>TXT:</strong> Arquivos de texto com layout fixo ou delimitado</li>
+          <li><strong>XML:</strong> Arquivos estruturados em formato XML</li>
+          <li><strong>APIs Bancárias:</strong> Integração direta com APIs dos principais bancos</li>
         </ul>
+      </div>
+
+      <div class="content-card">
+        <h2>Implementação e Configuração</h2>
+        
+        <h3>Processo de Implementação</h3>
+        <ol style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><strong>Análise de Requisitos:</strong> Levantamento detalhado das necessidades específicas da organização</li>
+          <li><strong>Configuração Inicial:</strong> Setup do ambiente, banco de dados e parâmetros básicos</li>
+          <li><strong>Mapeamento de Contas:</strong> Configuração do plano de contas e relacionamento com contas bancárias</li>
+          <li><strong>Definição de Regras:</strong> Criação de regras de matching específicas para cada tipo de transação</li>
+          <li><strong>Testes e Validação:</strong> Execução de testes com dados reais para validação do sistema</li>
+          <li><strong>Treinamento:</strong> Capacitação da equipe nas funcionalidades e operação do sistema</li>
+          <li><strong>Go-Live:</strong> Entrada em produção com acompanhamento especializado</li>
+        </ol>
+
+        <h3>Configurações Avançadas</h3>
+        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><strong>Tolerâncias de Matching:</strong> Definição de margens aceitáveis para diferenças de valor e data</li>
+          <li><strong>Regras de Negócio:</strong> Configuração de regras específicas por tipo de transação</li>
+          <li><strong>Workflows de Aprovação:</strong> Definição de fluxos de aprovação para divergências</li>
+          <li><strong>Alertas Automáticos:</strong> Configuração de notificações para situações específicas</li>
+          <li><strong>Integração com ERP:</strong> Conexão com sistemas de gestão empresarial</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2>Suporte e Manutenção</h2>
+        
+        <h3>Níveis de Suporte</h3>
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>🔧 Suporte Técnico</strong>
+            <small>Atendimento especializado para questões técnicas e operacionais do sistema.</small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>📚 Documentação</strong>
+            <small>Manual completo do usuário, guias de configuração e documentação técnica.</small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>🎓 Treinamento</strong>
+            <small>Programas de capacitação para usuários finais e administradores do sistema.</small>
+          </div>
+          
+          <div class="feature-item">
+            <strong>🔄 Atualizações</strong>
+            <small>Atualizações regulares com melhorias, correções e novas funcionalidades.</small>
+          </div>
+        </div>
+
+        <div style="background-color: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+          <strong>💡 Importante:</strong> O sistema DPC de Conciliação Bancária é uma solução enterprise que requer implementação e configuração especializada. Entre em contato com nossa equipe técnica para mais informações sobre licenciamento e implementação.
+        </div>
       </div>
     </main>
   </div>
