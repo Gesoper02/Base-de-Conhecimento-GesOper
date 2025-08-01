@@ -37,7 +37,7 @@
           <a href="../conciliacao-bancaria/index.html">🏦 Conciliação Bancária</a>
           <a href="../lancamento-de-caixa/index.html">📥 Lançamento de Caixa</a>
           <a href="../base-de-faturamento/index.html">🏷️ Base de Faturamento</a>
-          <a href="index.html">Contas a Receber</a>
+          <a href="index.html" class="active">🗂️ Contas a Receber</a>
         </div>
       </div>
 
@@ -62,6 +62,120 @@
           <a href="../../index.html">Início</a> >
           <a href="../index.html">Financeiro</a> >
           Contas a Receber
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>🗂️ Manutenção de Títulos - Contas a Receber</h2>
+        <p>Pode ser acessado pelo seguinte caminho: <b>Gesoper >> Financeiro >> Contas a Receber >> Manutenção de
+            Títulos</b></p>
+        <img src="../../assets/img/contas-a-receber.png" alt="Tela de Conciliação Bancária"
+          style="max-width: 100%; height: auto; display: block; margin: 1rem 0;">
+
+        <h3>Visão Geral</h3>
+        <p style="text-align: justify;">
+          No módulo de Contas a Receber, todas as receitas da empresa são registradas, podendo ser inseridas de forma
+          manual ou geradas automaticamente por meio de integrações. Este módulo permite a gestão eficiente de títulos,
+          com funcionalidades que suportam a criação, edição, exclusão e baixa de títulos, além de oferecer opções para
+          controle de status e observações detalhadas.
+        </p>
+
+        <h3>Funcionalidades de Cadastro</h3>
+        <p style="text-align: justify;">
+          Para cadastrar ou gerenciar um título, é necessário informar os seguintes dados:
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong>Código do Cliente</strong>
+            <small>Identificador único do cliente associado ao título.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Número do Título</strong>
+            <small>Número que identifica o título, podendo ser acompanhado ou não de uma série.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Série do Título</strong>
+            <small>Informação complementar ao número do título, quando aplicável.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Status do Documento</strong>
+            <small>Define o estado do título, que pode ser: <b>Definitivo</b>, <b>Provisório</b>, <b>Sem Previsão</b> ou
+              <b>Contingenciamento</b>. No caso de Contingenciamento, a Tesouraria pode realizar a baixa do título
+              marcando essa opção.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Juros e Multa</strong>
+            <small>Podem ser informados em valores brutos ou percentuais, com frequência de cobrança mensal ou anual.
+              Para operações bancárias, é necessário verificar as exigências do banco, como multa em percentual único e
+              juros em valor diário.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Data de Remessa e Nosso Número</strong>
+            <small>Preenchidos automaticamente ao gerar a remessa para integração com arquivos CNAB no Gesoperfômetro
+              (ferramenta WEB).</small>
+          </li>
+          <li class="feature-item">
+            <strong>Data de Pagamento e Data de Vencimento</strong>
+            <small>Preenchidas automaticamente ao cadastrar o título, incluindo valores relacionados a <b>Protesto</b>,
+              <b>Glosa</b>, <b>Juros</b>, <b>Despesas</b>, <b>Valor Parcial</b>, <b>Multa</b> e <b>Desconto</b>.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Movimentação</strong>
+            <small>Campo preenchido automaticamente com informações da tela de movimentação financeira.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Observação</strong>
+            <small>Campo opcional para anotações adicionais, quando necessário.</small>
+          </li>
+        </ul>
+
+        <h3>Ações Disponíveis</h3>
+        <p style="text-align: justify;">
+          A tela de manutenção de títulos oferece botões que permitem realizar diversas ações:
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong>Excluir</strong>
+            <small>Habilitado quando o módulo de Tesouraria não está em uso. Por padrão, os lançamentos de caixa são
+              gerenciados pelo módulo de Tesouraria.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Estornar Baixa</strong>
+            <small>Permite alterar um título de <b>Quitado</b> para <b>Aberto</b>. Após a quitação, o título não pode
+              ser alterado, exceto para anotações no campo de observações.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Exceções</strong>
+            <small>Permite registrar informações de forma mais organizada, como instruções específicas (ex.: "Não pagar
+              este documento, uma nova duplicata será emitida com desconto referente ao serviço").</small>
+          </li>
+        </ul>
+
+        <h3>Consulta e Alteração de Títulos</h3>
+        <p style="text-align: justify;">
+          A funcionalidade de consulta e alteração permite visualizar e editar informações de títulos já cadastrados,
+          garantindo maior controle e organização. Esta seção está em desenvolvimento e será detalhada em futuras
+          atualizações.
+        </p>
+
+        <h3>Benefícios Operacionais</h3>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #003973;">
+            <h4 style="color: #003973; margin-bottom: 0.5rem;">⚡ Eficiência no Registro</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Automatização e integração permitem registrar receitas de forma
+              rápida e precisa.</p>
+          </div>
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745;">
+            <h4 style="color: #28a745; margin-bottom: 0.5rem;">🎯 Controle de Status</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Gerenciamento detalhado dos status dos títulos, com opções como
+              Definitivo, Provisório e Contingenciamento.</p>
+          </div>
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffc107;">
+            <h4 style="color: #ffc107; margin-bottom: 0.5rem;">📊 Visibilidade Financeira</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Informações detalhadas e organizadas para melhor acompanhamento das
+              receitas.</p>
+          </div>
         </div>
       </div>
     </main>
