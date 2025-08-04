@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contas a Pagar - GesOper</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2><a href="../../index.html">GesOper</a></h2>
+        <div class="subtitle">Base de Conhecimento</div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-button" data-submenu="submenu-operacional">
+          <span><span class="icon">⚙️</span>Operacional</span>
+          <span class="arrow">▶</span>
+        </button>
+        <div id="submenu-operacional" class="submenu">
+          <a href="../../operacional/escala/index.html">📅 Escala</a>
+          <a href="../../operacional/cadastro-jornada/index.html">⏰ Cadastro de Jornada</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-button active" data-submenu="submenu-financeiro">
+          <span><span class="icon">💰</span>Financeiro</span>
+          <span class="arrow rotated">▶</span>
+        </button>
+        <div id="submenu-financeiro" class="submenu show">
+          <a href="../index.html">📊 Visão Geral</a>
+          <a href="../conciliacao-bancaria/index.html">🏦 Conciliação Bancária</a>
+          <a href="../lancamento-de-caixa/index.html">📥 Lançamento de Caixa</a>
+          <a href="../base-de-faturamento/index.html">🏷️ Base de Faturamento</a>
+          <a href="../contas-a-receber/index.html">🗂️ Contas a Receber</a>
+          <a href="index.html" class="active">💳 Contas a Pagar</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-button">
+          <a href="../../beneficios/index.html"
+            style="color: inherit; text-decoration: none; display: flex; align-items: center; width: 100%;">
+            <span class="icon">🎁</span>Benefícios
+          </a>
+        </button>
+      </div>
+    </nav>
+
+    <main class="content">
+      <div class="topbar">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h1>Contas a Pagar</h1>
+          <img src="../../assets/img/GesoperFinanceiro.png" alt="Logo Financeiro"
+            style="height: 80px; margin-right: 10px;">
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Início</a> >
+          <a href="../index.html">Financeiro</a> >
+          Contas a Pagar
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>💳 Manutenção de Títulos - Contas a Pagar</h2>
+        <p>Pode ser acessado pelo seguinte caminho: <b>GesOper >> Financeiro >> Contas a Pagar</b></p>
+        <img src="../../assets/img/contas-a-pagar.png" alt="Tela de Manutenção de Títulos"
+          style="max-width: 100%; height: auto; display: block; margin: 1rem 0;">
+
+        <h3>Visão Geral</h3>
+        <p style="text-align: justify;">
+          No módulo de Contas a Pagar, é possível registrar todas as informações relacionadas aos pagamentos a serem realizados aos fornecedores. Os títulos a pagar podem ser parcelados ou replicados, e também é possível realizar o lançamento de previsões de contas a pagar. Ao acessar a tela de Manutenção de Títulos, uma janela será aberta para que o usuário informe a filial para a qual o lançamento será realizado. A interface de lançamento de títulos no Contas a Pagar é semelhante à do Contas a Receber.
+        </p>
+
+        <h3>Processo de Lançamento de Títulos</h3>
+        <p style="text-align: justify;">
+          Para realizar o lançamento de um título, é necessário informar os seguintes dados:
+        </p>
+        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+          <li><b>Código do Credor:</b> Identificador único do fornecedor ou credor.</li>
+          <li><b>Número do Título:</b> Número que identifica o título a ser pago.</li>
+          <li><b>Série do Título:</b> Identificador adicional que, junto com o número e o código do credor, forma uma chave única, garantindo que um credor não tenha dois títulos com o mesmo número e série.</li>
+        </ul>
+        <p style="text-align: justify;">
+          Esses campos são obrigatórios e garantem a unicidade do título no sistema. Após preencher as informações, o usuário pode prosseguir com o registro do título para posterior processamento no fluxo de contas a pagar.
+        </p>
+
+        <h3>Funcionalidades</h3>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong>Parcelamento de Títulos</strong>
+            <small>Permite dividir o valor do título em múltiplas parcelas para facilitar o pagamento.</small>
+          </li>
+          <li class="feature-item">
+            <b>Replicação de Títulos</b>
+            <small>Possibilita a criação de cópias de títulos para agilizar o registro de pagamentos recorrentes.</small>
+          </li>
+          <li class="feature-item">
+            <strong>Lançamento de Previsões</strong>
+            <small>Permite registrar previsões de contas a pagar, auxiliando no planejamento financeiro.</small>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2>Benefícios Operacionais</h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #003973;">
+            <h4 style="color: #003973; margin-bottom: 0.5rem;">⚡ Eficiência no Registro</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Automatização do processo de lançamento de títulos reduz o tempo necessário para gerenciar contas a pagar.</p>
+          </div>
+
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745;">
+            <h4 style="color: #28a745; margin-bottom: 0.5rem;">🎯 Precisão nos Dados</h4>
+            <p style="font-size: 0.9rem; margin: 0;">A unicidade garantida pelo código do credor, número e série do título evita duplicações e erros.</p>
+          </div>
+
+          <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffc107;">
+            <h4 style="color: #ffc107; margin-bottom: 0.5rem;">📊 Planejamento Financeiro</h4>
+            <p style="font-size: 0.9rem; margin: 0;">A possibilidade de registrar previsões facilita a gestão do fluxo de caixa.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer style="text-align: center; padding: 1.5rem 1rem; background-color: #f8f9fa; border-top: 1px solid #ccc;">
+    <img src="../../LogoSolucao.png" alt="Logo Solução" style="height: 50px; margin-bottom: 0.5rem;">
+    <p style="margin: 0;">&copy; 2025 GesOper - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="../../assets/js/navigation.js"></script>
+</body>
+
+</html>
